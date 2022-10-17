@@ -2,6 +2,7 @@
   "name": "forms-com",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://AdelaidAC.github.io/COMForms",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -12,6 +13,7 @@
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "electron": "^19.0.10",
+    "gh-pages": "^4.0.0",
     "node-polyfill-webpack-plugin": "^2.0.0",
     "paper-css": "^0.4.1",
     "process": "^0.11.10",
@@ -25,6 +27,8 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
