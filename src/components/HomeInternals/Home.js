@@ -47,7 +47,7 @@ export default function Home({pages, name, initials, address, phone}) {
     return (
         <div>
             <Badge text="1"/> 
-            <ISHome name={name}/>
+            <ISHome name={name} address={address} phone={phone}/>
             <Badge text="2"/> 
             <PAHomeInternals name={name}/>
 

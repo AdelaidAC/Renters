@@ -184,7 +184,7 @@ export default function GarageLiabilityIS({name, address}) {
                 </div>
                 <div>
                     <b>Date: </b>
-                    <Input className="ms-1 text-center" maxlength="8" width = "80px"/>
+                    <Input className="ms-1 text-center" maxlength="10" width = "80px"/>
                 </div>
             </div>
 

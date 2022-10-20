@@ -12,7 +12,7 @@ export default function ISHome({name, address, phone}) {
 
     return (
         
-        <div className='sheet font-10'>
+        <div className='sheet font-9'>
             <Logo/>
             <Title text="INSURED’S STATEMENT"/>
             
@@ -26,13 +26,13 @@ export default function ISHome({name, address, phone}) {
                 <div className='d-flex col-9'>
                     <b>Legal Owner Name:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40" value={name}/>
+                        <Input className="w-100 ms-1 text-center" value={name}/>
                     </span>
                 </div>
                 <div className='d-flex'>
                     <b>Date of Birth:</b>
                     <span className="flex-fill">
-                        <Input className="ms-1" maxlength="40" width = "80px"/>
+                        <Input className="ms-1 text-center" maxlength="10" width = "80px"/>
                     </span>
                 </div>
             </div>
@@ -41,13 +41,13 @@ export default function ISHome({name, address, phone}) {
                 <div className='d-flex col-9'>
                     <b>Co-Applicant Name:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="40"/>
                     </span>
                 </div>
                 <div className='d-flex'>
                     <b>Date of Birth:</b>
                     <span className="flex-fill">
-                        <Input className="ms-1" maxlength="40" width = "80px"/>
+                        <Input className="ms-1 text-center" maxlength="10" width = "80px"/>
                     </span>
                 </div>
             </div>
@@ -56,19 +56,19 @@ export default function ISHome({name, address, phone}) {
                 <div class="col d-flex">
                     <b>Home Phone:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="25"/>
                     </span>
                 </div>
                 <div class="col d-flex">
-                    <b>Cell Phone:</b>
+                    <b>Cell:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="45"/>
+                        <Input className="w-100 ms-1 text-center" value={phone}/>
                     </span>
                 </div>
                 <div class="col d-flex">
                     <b>Work Phone:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="25"/>
                     </span>
                 </div>
             </div>
@@ -76,202 +76,182 @@ export default function ISHome({name, address, phone}) {
             <div className="d-flex my-1">
                 <b>Mailing Address:</b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="80"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="80"/>
                 </span>
             </div>
 
             <div className="d-flex my-1">
                 <b>Property Address:</b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="80"/>
+                    <Input className="w-100 ms-1 text-center" value={address}/>
                 </span>
             </div>
 
-            <p className='font-9 text-center my-3 fw-bold'>
+            <p className='font-9 text-center my-2 fw-bold'>
                <i>Please handwrite the landlord's/additional insureds information / Favor de escribir la informacion del proprietario o asegurado adicional.</i>
             </p>
 
             <div className="d-flex">
                 <b>Mortgagee 1 / Hipotecario 1:</b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="80"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="80"/>
                 </span>
             </div>
 
             <div className="text-center">
                 Loan Number 1 / Numero de Prestamo 1:
                 <span className="flex-fill">
-                    <Input className="ms-1" maxlength="80" width="400px"/>
+                    <Input className="ms-1 text-center" maxlength="60" width="400px"/>
                 </span>
             </div>
  
             <table className='w-100 '>
                 <tr>
                     <td colspan="5">
-                        *(Please initial occupancy description chosen)*
+                        <b>*(Please initial occupancy description chosen)*</b>
                     </td>
                 </tr>
                 <tr className='d-flex justify-content-between'>
                     <td>
                         <input className="me-1" type="checkbox"/> 
                         Owner Occupied
-                        <Input width="60px" maxlength="40" className="ms-1"/>
+                        <Input width="60px" maxlength="8" className="ms-1 text-center"/>
                     </td>
                     <td>
                         <input className="me-1" type="checkbox"/> 
                         Tenant
-                        <Input width="60px" maxlength="40" className="ms-1"/>
+                        <Input width="60px" maxlength="8" className="ms-1 text-center"/>
                     </td>
                     <td>
                         <input className="me-1" type="checkbox"/> 
                         Secondary
-                        <Input width="60px" maxlength="40" className="ms-1"/>
+                        <Input width="60px" maxlength="8" className="ms-1 text-center"/>
                     </td>
                     <td>
                         <input className="me-1" type="checkbox"/> 
                         Seasonal
-                        <Input width="60px" maxlength="40" className="ms-1"/>
+                        <Input width="60px" maxlength="8" className="ms-1 text-center"/>
                     </td>
                     <td>
                         <input className="me-1" type="checkbox"/> 
                         Vacant
-                        <Input width="60px" maxlength="40" className="ms-1"/>
+                        <Input width="60px" maxlength="8" className="ms-1 text-center"/>
                     </td>
                 </tr>
             </table>
 
-            <div className='row mt-3'>
+            <div className='row'>
                 <div className='col-3'>
                     # of Bedrooms:
-                    <Input className="ms-1" width="40%" maxlength="40"/>
+                    <Input className="ms-1 text-center" width="40%" maxlength="10"/>
                 </div>
                 <div className='col-3'>
                     Year Built:
-                    <Input className="ms-1" width="40%" maxlength="40"/>
+                    <Input className="ms-1 text-center" width="40%" maxlength="10"/>
                 </div>
                 <div className='col-3'>
                     # of Bathrooms:
-                    <Input className="ms-1" width="40%" maxlength="40"/>
+                    <Input className="ms-1 text-center" width="40%" maxlength="10"/>
                 </div>
                 <div className='col-3'>
                     Square Feet:
-                    <Input className="ms-1" width="40%" maxlength="40"/>
+                    <Input className="ms-1 text-center" width="40%" maxlength="10"/>
                 </div>
             </div>
 
             <div className='row'>
                 <div className='col-3'>
                     # of Stories:
-                    <Input className="ms-1" width="40%" maxlength="40"/>
+                    <Input className="ms-1 text-center" width="40%" maxlength="10"/>
                 </div>
                 <div className='col-3'>
                     Age of Roof:
-                    <Input className="ms-1" width="40%" maxlength="40"/>
+                    <Input className="ms-1 text-center" width="40%" maxlength="10"/>
                 </div>
                 <div className='col-3'>
                     # of Fireplaces:
-                    <Input className="ms-1" width="40%" maxlength="40"/>
+                    <Input className="ms-1 text-center" width="40%" maxlength="10"/>
                 </div>
                 <div className='col-3'>
                     Date of Purchase
-                    <Input className="ms-1" width="40%" maxlength="40"/>
+                    <Input className="ms-1 text-center" width="40%" maxlength="10"/>
                 </div>
             </div>
 
-            <table className='my-4'>
+            <table className='my-3'>
                 <tr>
-                    <td>1) Does the home have Copper Plumbing?</td>
+                    <td><b>1) Does the home have Copper Plumbing?</b></td>
                     <td>
-                        Yes
-                        <input className="me-1" type="checkbox"/> 
+                        Yes <input type="checkbox"/> 
                     </td>
                     <td>
-                        No
-                        <input className="me-1" type="checkbox"/> 
-                        <b>SURCHARGE</b>
+                        No <input type="checkbox"/> <b>SURCHARGE</b>
                     </td>
                 </tr>
                 <tr>
-                    <td>2) Are there smoke detectors installed?</td>
+                    <td><b>2) Are there smoke detectors installed?</b></td>
                     <td>
-                        Yes
-                        <input className="me-1" type="checkbox"/> 
+                        Yes <input type="checkbox"/> 
                     </td>
                     <td>
-                        No
-                        <input className="me-1" type="checkbox"/> 
-                        <b>INELIGIBLE RISK</b>
+                        No <input type="checkbox"/> <b>INELIGIBLE RISK</b>
                     </td>
                 </tr>
                 <tr>
-                    <td>3) Does the house have circuit breakers? Yes INELIGIBLE RISK</td>
+                    <td><b>3) Does the house have circuit breakers? Yes INELIGIBLE RISK</b></td>
                     <td>
-                        Yes
-                        <input className="me-1" type="checkbox"/> 
+                        Yes <input type="checkbox"/> 
                     </td>
                     <td>
-                        No
-                        <input className="me-1" type="checkbox"/> 
-                        <b>INELIGIBLE RISK</b>
+                        No <input type="checkbox"/> <b>INELIGIBLE RISK</b>
                     </td>
                 </tr>
                 <tr>
-                    <td>4) Do you own or board any pets?</td>
+                    <td><b>4) Do you own or board any pets?</b></td>
                     <td>
-                        Yes
-                        <input className="me-1" type="checkbox"/> 
-                        <b>CALL FOR APPROVAL</b>
+                        Yes <input type="checkbox"/> <b>CALL FOR APPROVAL</b>
                     </td>
                     <td>
-                        No
-                        <input className="me-1" type="checkbox"/>
+                        No <input type="checkbox"/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        5) Do you own or board any pets?
+                        <b>5) Do you own or board any pets?</b>
                         <br/>
                         <span className='ms-3'>
-                            If “yes”, what kind?
-                            <Input width="150px"/>
+                            If “yes”, what kind? <Input width="150px" className='text-center' maxlength="20"/>
                         </span>
                     </td>
                     <td>
-                        Yes
-                        <input className="me-1" type="checkbox"/>
+                        Yes <input type="checkbox"/>
                     </td>
                     <td>
-                        No
-                        <input className="me-1" type="checkbox"/>
+                        No <input type="checkbox"/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        6) Do you have an attached garage?
+                        <b>6) Do you have an attached garage?</b>
                         <br/>
                         <span className='ms-3'>
-                            If “yes,” how many cars?
-                            <Input width="150px"/>
+                            If “yes,” how many cars? <Input width="150px" className='text-center' maxlength="20"/>
                         </span>
                     </td>
                     <td>
-                        Yes
-                        <input className="me-1" type="checkbox"/>
+                        Yes <input type="checkbox"/>
                     </td>
                     <td>
-                        No
-                        <input className="me-1" type="checkbox"/>
+                        No <input type="checkbox"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>7) Do you have a pool?</td>
+                    <td><b>7) Do you have a pool?</b></td>
                     <td>
-                        Yes
-                        <input className="me-1" type="checkbox"/>
+                        Yes <input type="checkbox"/>
                     </td>
                     <td>
-                        No
-                        <input className="me-1" type="checkbox"/>
+                        No <input type="checkbox"/>
                     </td>
                 </tr>
                 <tr>
@@ -279,12 +259,10 @@ export default function ISHome({name, address, phone}) {
                         <span className='ms-3'>If “yes,” is the pool fenced?</span>
                     </td>
                     <td>
-                        Yes
-                        <input className="me-1" type="checkbox"/>
+                        Yes <input type="checkbox"/>
                     </td>
                     <td>
-                        No
-                        <input className="me-1" type="checkbox"/>
+                        No <input type="checkbox"/>
                     </td>
                 </tr>
                 <tr>
@@ -294,18 +272,16 @@ export default function ISHome({name, address, phone}) {
                         </span>
                     </td>
                     <td>
-                        Yes
-                        <input className="me-1" type="checkbox"/>
+                        Yes <input type="checkbox"/>
                     </td>
                     <td>
-                        No
-                        <input className="me-1" type="checkbox"/>
+                        No <input type="checkbox"/>
                     </td>
                 </tr>
             </table>
 
 
-            <div className='font-9 text-justify lh-2'>
+            <div className='font-9 text-justify lh-1'>
                 <p>
                     I hereby apply to Adriana’s Insurance for a policy of insurance. I agree that such policy shall be null and void if such information is materially false or misleading. I understand that any
                     existing loss at the time of application will not be covered by this insurance. I further understand that my policy does not cover undisclosed improvements or theft unless forced entry
@@ -334,16 +310,16 @@ export default function ISHome({name, address, phone}) {
                 </p>
             </div>
 
-            <div className="d-flex justify-content-between my-4">
+            <div className="d-flex justify-content-between mt-4 mb-1">
                 <div className='d-flex flex-fill'>
                     <b>Applicant Signature: </b>
                     <span className='flex-fill mx-1'>
-                        <Input className="w-100" maxlength="80" disabled = "true"/>
+                        <Input className="w-100 text-center" maxlength="80" disabled = "true"/>
                     </span>
                 </div>
                 <div>
                     <b>Date: </b>
-                    <Input className="ms-1" maxlength="40" width = "80px"/>
+                    <Input className="ms-1 text-center" maxlength="10" width = "80px"/>
                 </div>
             </div>
 
