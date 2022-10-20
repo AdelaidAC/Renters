@@ -23,12 +23,12 @@ export default function Workers({pages, name, initials, address, phone}) {
     }
 
     if (Object.values(pages).includes("creditCard")) {
-        creditCard = <><Badge text="6"/><CCA name={name}/></>;
+        creditCard = <><Badge text="6"/><CCA name={name} address={address}/></>;
     }
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
-      }, []);
+    }, []);
 
     return (
 

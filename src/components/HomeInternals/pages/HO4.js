@@ -5,6 +5,10 @@ import Title from "../../Title";
 
 export default function HO4({name, initials}) {
 
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const [c1, setC1] = useState('');
     const [c2, setC2] = useState('');
     const [c3, setC3] = useState('');

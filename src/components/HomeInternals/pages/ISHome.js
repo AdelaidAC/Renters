@@ -8,7 +8,7 @@ export default function ISHome({name, address, phone}) {
     
     React.useEffect(() => {
         window.scrollTo(0, 0);
-      }, []);
+    }, []);
 
     return (
         

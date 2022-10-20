@@ -17,6 +17,11 @@ const agreementValues = [
 ]
 
 export default function PAHomeInternals({name}) {
+
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         
         <div className='sheet font-12 text-justify'>

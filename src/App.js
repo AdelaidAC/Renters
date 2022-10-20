@@ -348,7 +348,7 @@ function App() {
           <div class="d-flex align-items-center">
             <label className="ms-2 fw-bold" for="doc">Pages:</label>
             <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesGL" onChange={handleGL}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesGL" onChange={handleGL}/> Credit Card Form
+            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesGL" onChange={handleGL}/> Credit Card
             <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesGL" onChange={handleGL}/> Spanish BF
           </div>
         }
@@ -358,7 +358,7 @@ function App() {
             <label className="ms-2 fw-bold" for="doc">Pages:</label>
             <input class="ms-2 me-1" type="checkbox" value="assignedRisk" name="pagesT" onChange={handleT}/> Assigned Risk
             <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesT" onChange={handleT}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesT" onChange={handleT}/> Credit Card Form
+            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesT" onChange={handleT}/> Credit Card
             <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesT" onChange={handleT}/> Spanish BF
           </div>
         }
@@ -367,7 +367,7 @@ function App() {
           <div class="d-flex align-items-center">
             <label className="ms-2 fw-bold" for="doc">Pages:</label>
             <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesWC" onChange={handleWC}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesWC" onChange={handleWC}/> Credit Card Form
+            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesWC" onChange={handleWC}/> Credit Card
             <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesWC" onChange={handleWC}/> Spanish BF
           </div>
         }
@@ -375,12 +375,11 @@ function App() {
         {homeVisible &&
           <div class="d-flex align-items-center">
             <label className="ms-2 fw-bold" for="doc">Pages:</label>
-            <input class="ms-2 me-1" type="checkbox" value="dp3" name="pagesH" onChange={handleH}/> DP3
-            <input class="ms-2 me-1" type="checkbox" value="ho3" name="pagesH" onChange={handleH}/> HO3
+            <input class="ms-2 me-1" type="checkbox" value="dp3" name="pagesH" onChange={handleH}/> DP3/HO3/Mobile
             <input class="ms-2 me-1" type="checkbox" value="ho4" name="pagesH" onChange={handleH}/> HO4
             <input class="ms-2 me-1" type="checkbox" value="ho6" name="pagesH" onChange={handleH}/> HO6
             <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesH" onChange={handleH}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesH" onChange={handleH}/> Credit Card Form
+            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesH" onChange={handleH}/> Credit Card
             <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesH" onChange={handleH}/> Spanish BF
           </div>
         }
@@ -390,7 +389,7 @@ function App() {
             <label className="ms-2 fw-bold" for="doc">Pages:</label>
             <input class="ms-2 me-1" type="checkbox" value="infinity" name="pagesA" onChange={handleA}/> Infinity
             <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesA" onChange={handleA}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesA" onChange={handleA}/> Credit Card Form
+            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesA" onChange={handleA}/> Credit Card
             <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesA" onChange={handleA}/> Spanish BF
           </div>
         }

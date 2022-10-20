@@ -4,6 +4,10 @@ import Logo from "../../Logo";
 import Title from "../../Title";
 
 export default function DP3HO3Mobile({name, initials}) {
+
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     
     const [d, setD] = useState('');
     const [e, setE] = useState('');

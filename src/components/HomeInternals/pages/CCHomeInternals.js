@@ -1,13 +1,15 @@
-import React from 'react'
-import CDate from '../../CDate'
+import React, { useEffect, useState} from 'react';
 import Input from '../../Input'
 import Logo from '../../Logo'
 
-export default function CCHomeInternals({name, initials, address, phone}) {
+export default function CCHomeInternals({name, address}) {
     
     React.useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
+
+      const [chkDC, setChkDC] = useState(false);
+      const [chkDA, setChkDA] = useState(false);
 
     return (
         <div className='sheet font-10 lh-1 text-justify'>
@@ -42,13 +44,22 @@ export default function CCHomeInternals({name, initials, address, phone}) {
                         LEGAL NAME OF BUSINESS OR INDIVIDUAL AUTHORIZING CHARGE (If corporation list full corporation name)
                     </div>
                     <div className="col-3">
-                        <input type="radio"/><strong style={{color:'red'}} className="ms-1">Different Card Holder</strong>
+                    <input 
+                            type="checkbox" 
+                            checked={chkDC} 
+                            onChange={e => setChkDC(e.target.checked)}
+                        /><strong style={{color:'red'}} className="ms-1">Different Card Holder</strong>
                     </div>
                 </div>
                 
                 <div className="row text-center pb-2">
                     <div className="col-12">
-                        <Input width="80%" className="text-center" maxlength="80"/>
+                        <Input 
+                            width="80%" 
+                            className="text-center"
+                            maxlength="40"
+                            {...(chkDC ? {} : {value: name})}
+                        />
                     </div>
                 </div>
                 
@@ -59,7 +70,7 @@ export default function CCHomeInternals({name, initials, address, phone}) {
                 </div>
                 <div className="row text-center pb-2">
                     <div className="col-12">
-                        <Input width="80%" className="text-center" maxlength="80"/>
+                        <Input width="80%" className="text-center" value={address}/>
                     </div>
                 </div>
                 
@@ -170,7 +181,7 @@ export default function CCHomeInternals({name, initials, address, phone}) {
                 <div className="row py-2 font-9">
                     <div className="col-8 fw-bold">
                         Name, exactly as it appears on the card:
-                        <Input width = "54%" className="text-center ms-1" maxlength="40"/>
+                        <Input width = "54%" className="text-center ms-1" value={name}/>
                     </div>
                     <div className="col-4 text-end">
                         * 3 digit # on the back of credit card
@@ -183,26 +194,33 @@ export default function CCHomeInternals({name, initials, address, phone}) {
                         If this address is not correct; you will run the risk of your insurance policy being cancelled.
                     </div>
                     <div className="col-4">
-                        <input type="radio"/><strong style={{color:'red'}} className="ms-1">Address same as Address Above</strong>
+                        <input type="checkbox" checked={chkDA} onChange={e => setChkDA(e.target.checked)}/><strong style={{color:'red'}} className="ms-1">Address same as Address Above</strong>
                     </div>
                 </div>
                 
                 
                 <div className="row text-center pt-2 fw-bold">
                     <div className="col">
-                        <Input width="95%" className="text-center" maxlength="20"/>
+                        <Input 
+                            width="90%" 
+                            className="text-center" 
+                            maxlength="80"
+                            {...(chkDA ? {value: address} : {})}
+                        />
+                    </div>
+                </div>
+
+                <div className="row justify-content-center text-center fw-bold">
+                    <div className="col-2">
                         <p className='mb-0'>Street</p>
                     </div>
-                    <div className="col">
-                        <Input width="95%" className="text-center" maxlength="20"/>
+                    <div className="col-2">
                         <p className='mb-0'>City</p>
                     </div>
-                    <div className="col">
-                        <Input width="95%" className="text-center" maxlength="20"/>
+                    <div className="col-2">
                         <p className='mb-0'>State</p>
                     </div>
-                    <div className="col">
-                        <Input width="95%" className="text-center" maxlength="10"/>
+                    <div className="col-2">
                         <p className='mb-0'>Zip Code</p>
                     </div>
                 </div>
@@ -219,7 +237,7 @@ export default function CCHomeInternals({name, initials, address, phone}) {
                 
                 <div className="row py-2">
                     <div className="col-12 text-center">
-                        On <CDate/>, I authorize Adriana's Insurance Services to charge <Input width = "15%" maxlength="15" className="text-center"/>. However,
+                        On <input type="date" className='text-center'/>, I authorize Adriana's Insurance Services to charge <Input width = "15%" maxlength="15" className="text-center"/>. However,
                         if a balance is owed, the remaining balance of <Input width = "15%" maxlength="15" className="text-center"/> will be charged on <input type="date" className='text-center'/>.
                     </div>
                 </div>
@@ -281,7 +299,7 @@ export default function CCHomeInternals({name, initials, address, phone}) {
                             </span>
                         </div>
                         <div>
-                            Date of Authorization: <CDate/>
+                            Date of Authorization: <input type="date" className='text-center'/>
                         </div>
                     </div>
 
