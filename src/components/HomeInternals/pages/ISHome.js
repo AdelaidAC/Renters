@@ -4,7 +4,7 @@ import CDate from '../../CDate';
 import Title from '../../Title'
 import Logo from '../../Logo'
 
-export default function ISHome({name, initials, address, phone}) {
+export default function ISHome({name, address, phone}) {
     
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -32,7 +32,7 @@ export default function ISHome({name, initials, address, phone}) {
                 <div className='d-flex'>
                     <b>Date of Birth:</b>
                     <span className="flex-fill">
-                        <Input className="ms-1" maxlength="40" width = "80px" placeholder = "mm/dd/yyyy"/>
+                        <Input className="ms-1" maxlength="40" width = "80px"/>
                     </span>
                 </div>
             </div>
@@ -47,7 +47,7 @@ export default function ISHome({name, initials, address, phone}) {
                 <div className='d-flex'>
                     <b>Date of Birth:</b>
                     <span className="flex-fill">
-                        <Input className="ms-1" maxlength="40" width = "80px" placeholder = "mm/dd/yyyy"/>
+                        <Input className="ms-1" maxlength="40" width = "80px"/>
                     </span>
                 </div>
             </div>
@@ -65,19 +65,10 @@ export default function ISHome({name, initials, address, phone}) {
                         <Input className="w-100 ms-1" maxlength="45"/>
                     </span>
                 </div>
-            </div>
-
-            <div class="row">
                 <div class="col d-flex">
                     <b>Work Phone:</b>
                     <span className="flex-fill">
                         <Input className="w-100 ms-1" maxlength="40"/>
-                    </span>
-                </div>
-                <div class="col d-flex">
-                    <b>Email:</b>
-                    <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="45"/>
                     </span>
                 </div>
             </div>
@@ -109,20 +100,6 @@ export default function ISHome({name, initials, address, phone}) {
 
             <div className="text-center">
                 Loan Number 1 / Numero de Prestamo 1:
-                <span className="flex-fill">
-                    <Input className="ms-1" maxlength="80" width="400px"/>
-                </span>
-            </div>
-
-            <div className="d-flex">
-                <b>Mortgagee 2 / Hipotecario 2:</b>
-                <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="80"/>
-                </span>
-            </div>
-
-            <div className="text-center">
-                Loan Number 2 / Numero de Prestamo 2:
                 <span className="flex-fill">
                     <Input className="ms-1" maxlength="80" width="400px"/>
                 </span>
@@ -252,7 +229,7 @@ export default function ISHome({name, initials, address, phone}) {
                 </tr>
                 <tr>
                     <td>
-                        5) Do you have an attached garage?
+                        5) Do you own or board any pets?
                         <br/>
                         <span className='ms-3'>
                             If “yes”, what kind?
@@ -270,7 +247,7 @@ export default function ISHome({name, initials, address, phone}) {
                 </tr>
                 <tr>
                     <td>
-                        6) Do you have a pool?
+                        6) Do you have an attached garage?
                         <br/>
                         <span className='ms-3'>
                             If “yes,” how many cars?
@@ -366,7 +343,7 @@ export default function ISHome({name, initials, address, phone}) {
                 </div>
                 <div>
                     <b>Date: </b>
-                    <CDate/>
+                    <Input className="ms-1" maxlength="40" width = "80px"/>
                 </div>
             </div>
 

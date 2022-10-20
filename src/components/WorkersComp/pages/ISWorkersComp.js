@@ -4,7 +4,7 @@ import CDate from '../../CDate';
 import Title from '../../Title'
 import Logo from '../../Logo'
 
-export default function ISWorkersComp({name, address, phone}) {
+export default function ISWorkersComp({name, address}) {
     
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -27,14 +27,14 @@ export default function ISWorkersComp({name, address, phone}) {
             <div className="d-flex my-1">
                 <b>Insured's Name <span className='font-8 fst-italic'> Nombre:</span></b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" value = {name}/>
+                    <Input className="w-100 ms-1 text-center" value = {name}/>
                 </span>
             </div>
 
             <div className="d-flex my-1">
                 <b>DBA <span className='font-8 fst-italic'> Nombre del Negocio:</span></b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="40"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="40"/>
                 </span>
             </div>
 
@@ -42,12 +42,12 @@ export default function ISWorkersComp({name, address, phone}) {
                 <div className='d-flex flex-fill'>
                     <b>Mailing Address <span className='font-8 fst-italic'> Dirección del Negocio:</span></b>
                     <span className='flex-fill mx-1'>
-                        <Input className="w-100" value={address}/>
+                        <Input className="w-100 text-center" value={address}/>
                     </span>
                 </div>
                 <div>
                     <b>Unit <span className='font-8 fst-italic'> Unidad:</span></b>
-                    <Input className="ms-1" maxlength="6"/>
+                    <Input className="ms-1 text-center" maxlength="6"/>
                 </div>
             </div>
 
@@ -55,19 +55,19 @@ export default function ISWorkersComp({name, address, phone}) {
                 <div className='d-flex flex-fill'>
                     <b>City <span className='font-8 fst-italic'> Ciudad:</span></b>
                     <span className='flex-fill mx-1'>
-                        <Input className="w-100" maxlength="25"/>
+                        <Input className="w-100 text-center" maxlength="25"/>
                     </span>
                 </div>
                 <div className='d-flex flex-fill'>
                     <b>Zip Code <span className='font-8 fst-italic'> Codigo Postal:</span></b>
                     <span className='flex-fill mx-1'>
-                        <Input className="w-100" maxlength="25"/>
+                        <Input className="w-100 text-center" maxlength="25"/>
                     </span>
                 </div>
                 <div className='d-flex flex-fill'>
                     <b>Telephone:</b>
                     <span className='flex-fill mx-1'>
-                        <Input className="w-100" value = {phone}/>
+                        <Input className="w-100 text-center" maxlength="15"/>
                     </span>
                 </div>
             </div>
@@ -77,28 +77,28 @@ export default function ISWorkersComp({name, address, phone}) {
             <div className="d-flex my-1">
                 <b>Business Description <span className='font-8 fst-italic'> Descripcion del Negocio:</span></b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="95"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="95"/>
                 </span>
             </div>
 
             <div className="d-flex my-1">
                 <b>Number of Employees <span className='font-8 fst-italic'> Numero de Empleados:</span></b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="15"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="15"/>
                 </span>
             </div>
 
             <div className="d-flex my-1">
                 <b>Number of Owners and % of ownership <span className='font-8 fst-italic'> Numero de Dueños y % de dueño:</span></b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="75"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="75"/>
                 </span>
             </div>
 
             <div className="d-flex my-1">
                 <b>Employees’ Payroll <span className='font-8 fst-italic'> Nomina de Pago Total:</span></b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="100"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="100"/>
                 </span>
             </div>
 
@@ -122,24 +122,24 @@ export default function ISWorkersComp({name, address, phone}) {
                     </td>
                 </tr>
                 <tr>
-                    <td><Input className="w-100" maxlength="25"/></td>
-                    <td><input type="date"/></td>
-                    <td><Input width="100px" maxlength="18"/></td>
+                    <td><Input className="w-100 text-center" maxlength="25"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
                 </tr>
                 <tr>
-                    <td><Input className="w-100" maxlength="25"/></td>
-                    <td><input type="date"/></td>
-                    <td><Input width="100px" maxlength="18"/></td>
+                    <td><Input className="w-100 text-center" maxlength="25"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
                 </tr>
                 <tr>
-                    <td><Input className="w-100" maxlength="25"/></td>
-                    <td><input type="date"/></td>
-                    <td><Input width="100px" maxlength="18"/></td>
+                    <td><Input className="text-center w-100" maxlength="25"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
                 </tr>
                 <tr>
-                    <td><Input className="w-100" maxlength="25"/></td>
-                    <td><input type="date"/></td>
-                    <td><Input width="100px" maxlength="18"/></td>
+                    <td><Input className="w-100 text-center" maxlength="25"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
                 </tr>
                 </table>
                 <table class="d-inline">
@@ -161,24 +161,24 @@ export default function ISWorkersComp({name, address, phone}) {
                     </td>
                 </tr>
                 <tr>
-                    <td><Input className="w-100" maxlength="25"/></td>
-                    <td><input type="date"/></td>
-                    <td><Input width="100px" maxlength="18"/></td>
+                    <td><Input className="w-100 text-center" maxlength="25"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
                 </tr>
                 <tr>
-                    <td><Input className="w-100" maxlength="25"/></td>
-                    <td><input type="date"/></td>
-                    <td><Input width="100px" maxlength="18"/></td>
+                    <td><Input className="w-100 text-center" maxlength="25"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
                 </tr>
                 <tr>
-                    <td><Input className="w-100" maxlength="25"/></td>
-                    <td><input type="date"/></td>
-                    <td><Input width="100px" maxlength="18"/></td>
+                    <td><Input className="w-100 text-center" maxlength="25"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
                 </tr>
                 <tr>
-                    <td><Input className="w-100" maxlength="25"/></td>
-                    <td><input type="date"/></td>
-                    <td><Input width="100px" maxlength="18"/></td>
+                    <td><Input className="w-100 text-center" maxlength="25"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
+                    <td><Input className="text-center" width="100px" maxlength="18"/></td>
                 </tr>
                 </table>
             </div>  
@@ -219,12 +219,12 @@ export default function ISWorkersComp({name, address, phone}) {
                 <div className='d-flex flex-fill'>
                     <b>Applicant Signature: </b>
                     <span className='flex-fill mx-1'>
-                        <Input className="w-100" maxlength="80" disabled = "true"/>
+                        <Input className="w-100 text-center" maxlength="80" disabled = "true"/>
                     </span>
                 </div>
                 <div>
                     <b>Date: </b>
-                    <CDate/>
+                    <Input className="ms-1 text-center" maxlength="8" width = "80px"/>
                 </div>
             </div>
 

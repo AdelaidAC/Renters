@@ -3,7 +3,7 @@ import Input from '../../Input'
 import Logo from '../../Logo'
 import CDate from '../../CDate';
 
-export default function SpanishBFWorkersComp({name}) {
+export default function SBFHomeInternals({name}) {
     
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -18,11 +18,12 @@ export default function SpanishBFWorkersComp({name}) {
                 <div className='d-flex col-8'>
                     <b>Nombre del Cliente:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1 text-center" value={name}/>
+                        <Input className="w-100 ms-1 text-center" maxlength="40" value={name}/>
                     </span>
                 </div>
                 <div>
-                    <b>Fecha: </b><input type='date' className='text-center'/>
+                    <b>Fecha: </b>
+                    <input type='date' className='text-center'/>
                 </div>
             </div>
 

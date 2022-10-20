@@ -1,8 +1,9 @@
 import React from 'react'
 import Input from '../../Input'
 import Logo from '../../Logo'
+import CDate from '../../CDate';
 
-export default function BAWorkersComp({name}) {
+export default function BFHomeInternals({name}) {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -21,7 +22,8 @@ export default function BAWorkersComp({name}) {
                     </span>
                 </div>
                 <div>
-                    <b>Date: </b><input type='date' className='text-center'/>
+                    <b>Date: </b>
+                    <input type="date" className='text-center'/>
                 </div>
             </div>
 
@@ -68,7 +70,7 @@ export default function BAWorkersComp({name}) {
             </p>
 
             <p className='lh-2'>
-                CLIENT agrees to pay BROKER a broker fee for BROKER’S services. The <b>Broker Fee is</b> <Input className='text-center' width="100px" maxlength="15"/>. Client understands
+                CLIENT agrees to pay BROKER a broker fee for BROKER’S services. The <b>Broker Fee is</b> <Input width="100px" maxlength="15" className='text-center'/>. Client understands
                 this fee and understands that the broker fee <b>IS/IS NOT REFUNDABLE</b>, irrespective of whether the policy is cancelled or rejected by the Client or insurer. Client
                 authorizes Broker to maintain premium payments in interest-bearing trust accounts and to receive any interest income there from until paid to the insurance company.
                 Additional Services: Broker may charge the following fees for the following services in addition to the broker fee:

@@ -19,7 +19,7 @@ export default function Workers({pages, name, initials, address, phone}) {
     }
 
     if (Object.values(pages).includes("balanceDue")) {
-        balanceDue = <><Badge text="5"/><PNWorkersComp name={name}/></>;
+        balanceDue = <><Badge text="5"/><PNWorkersComp name={name} address={address} phone={phone}/></>;
     }
 
     if (Object.values(pages).includes("creditCard")) {

@@ -16,7 +16,7 @@ const agreementValues = [
     "OTHER"
 ]
 
-export default function PAWorkersComp({name}) {
+export default function PAHomeInternals({name}) {
     return (
         
         <div className='sheet font-12 text-justify'>
@@ -29,11 +29,12 @@ export default function PAWorkersComp({name}) {
                 <div className='d-flex col-8'>
                     <b>Client Name:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1 text-center" value={name}/>
+                        <Input className="w-100 ms-1 text-center" maxlength="40" value={name}/>
                     </span>
                 </div>
                 <div>
-                    <b>Date: </b><input type="date" className='text-center'/>
+                    <b>Date: </b>
+                    <input type='date' className='text-center'/>
                 </div>
             </div>
 
@@ -42,7 +43,7 @@ export default function PAWorkersComp({name}) {
             </p>*/}
 
             <p className='font-11 my-4'>
-                It is my stated intention to obtain insurance coverage effective <input type="date" className='text-center'/>, however I do not have copies of the following information with me:
+                It is my stated intention to obtain insurance coverage effective <strong><input type='date' className='text-center'/></strong>, however I do not have copies of the following information with me:
             </p>
             
             
@@ -90,7 +91,7 @@ export default function PAWorkersComp({name}) {
             </p>
 
             <p className="text-center my-4 font-11">
-                I hereby promise to provide the above-indicated information by <input type="date" className='text-center'/> to Adriana's Insurance Services, Inc.
+                I hereby promise to provide the above-indicated information by <input type='date' className='text-center'/> to Adriana's Insurance Services, Inc.
             </p>
             
             <p className="mb-5 lh-2 font-11">

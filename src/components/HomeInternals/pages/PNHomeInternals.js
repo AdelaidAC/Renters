@@ -1,9 +1,10 @@
 import React from 'react'
+import CDate from '../../CDate'
 import Input from '../../Input'
 import Logo from '../../Logo'
 import Subtitle from '../../Subtitle'
 
-export default function PNWorkersComp({name, address, phone}) {
+export default function PNHomeInternals({name, address, phone}) {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -38,7 +39,7 @@ export default function PNWorkersComp({name, address, phone}) {
             </div>
 
             <div className='d-flex p-0'>
-                <span className='me-1'>the sum of</span> <span className="flex-fill"><Input className="w-100 text-center" maxlength="50"/></span>(<Input className='text-center' width = "150px" maxlength="15"/>), <i>without interest,</i>
+                <span className='me-1'>the sum of</span> <span className="flex-fill"><Input className="w-100 text-center" maxlength="50"/></span>(<Input width = "150px" maxlength="15" className='text-center'/>), <i>without interest,</i>
             </div>
 
             <div className='p-0'>
@@ -47,7 +48,7 @@ export default function PNWorkersComp({name, address, phone}) {
                 payable with <i>interest from the date of this note,</i> at the rate of 18% per annum, along with an added late charge of <u>Twenty dollars ($20.00).</u>
             </div>
             
-            <div className='d-flex justify-content-center text-center pt-5 pb-4'>
+            <div className='d-flex justify-content-center text-center pt-5 pb-3'>
                 <div className='border-top border-dark' style={{ width: "300px"}}>
                     <p className='mb-0 fw-bold'>Witness</p>
                 </div>
@@ -92,30 +93,30 @@ export default function PNWorkersComp({name, address, phone}) {
                     <p className='mb-0 fw-bold'>Insured’s Name</p>
                 </div>
                 <div>
-                    <input type='date' className='text-center'/>
+                    <input type="date"/>
                     <p className='mb-0 fw-bold'>Date</p>
                 </div>
             </div>
 
             <div className='d-flex justify-content-between mt-2 text-center'>
                 <div>
-                    <Input className='text-center' width = "150px" maxlength="15"/>
+                    <Input width = "150px" maxlength="15" className='text-center'/>
                     <p className='fw-bold'>Social Security Number</p>
                 </div>
                 <div>
-                    <Input className='text-center' width = "150px" value={phone} />
+                    <Input width = "150px" className='text-center' value={phone}/>
                     <p className='fw-bold'>Cell Phone Number</p>
                 </div>
                 <div>
-                    <Input className='text-center' width = "150px" maxlength="15"/>
+                    <Input width = "150px" maxlength="15" className='text-center'/>
                     <p className='fw-bold'>Home Phone Number</p>
                 </div>
                 <div>
-                    <Input className='text-center' width = "150px" maxlength="15"/>
+                    <Input width = "150px" maxlength="15" className='text-center'/>
                     <p className='fw-bold'>Work Phone Number</p>
                 </div>
                 <div>
-                    <Input className='text-center' maxlength="5"/>
+                    <Input maxlength="5" className='text-center'/>
                     <p className='fw-bold'>Ext.</p>
                 </div>
             </div>

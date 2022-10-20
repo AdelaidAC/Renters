@@ -4,7 +4,7 @@ import CDate from '../CDate';
 import Title from '../Title'
 import Logo from '../Logo'
 
-export default function GarageLiabilityIS({name, address, phone}) {
+export default function GarageLiabilityIS({name, address}) {
     
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -25,34 +25,34 @@ export default function GarageLiabilityIS({name, address, phone}) {
             <div className="d-flex my-1">
                 <b>Insured Name/Nombre:</b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="80" value={name}/>
+                    <Input className="w-100 ms-1 text-center" value={name}/>
                 </span>
             </div>
 
             <div className="d-flex my-1">
                 <b>DBA (Doing Business As)/Nombre del Negocio:</b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="70"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="70"/>
                 </span>
             </div>
 
             <div className="my-1">
                 <b>Mailing Address/Dirección para Correspondencia:</b>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="110"/>
+                    <Input className="w-100 text-center" maxlength="110"/>
                 </div>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="110"/>
+                    <Input className="w-100 text-center" maxlength="110"/>
                 </div>
             </div>
 
             <div className="my-1">
                 <b>Property Address/Dirección del Negocio/Oficina:</b>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="110"/>
+                    <Input className="w-100 text-center" value={address}/>
                 </div>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="110"/>
+                    <Input className="w-100 text-center" maxlength="110"/>
                 </div>
             </div>
 
@@ -60,13 +60,13 @@ export default function GarageLiabilityIS({name, address, phone}) {
                 <div class="col d-flex">
                     <b>Business Phone:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="40"/>
                     </span>
                 </div>
                 <div class="col d-flex">
                     <b>Annual Gross:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="35"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="35"/>
                     </span>
                 </div>
             </div>
@@ -75,13 +75,13 @@ export default function GarageLiabilityIS({name, address, phone}) {
                 <div class="col d-flex">
                     <b>Number of Employees:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="35"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="35"/>
                     </span>
                 </div>
                 <div class="col d-flex">
                     <b>Annual Payroll:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="35"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="35"/>
                     </span>
                 </div>
             </div>
@@ -90,7 +90,7 @@ export default function GarageLiabilityIS({name, address, phone}) {
                 <div class="col d-flex">
                     <b>Business Email/Website:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="85"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="85"/>
                     </span>
                 </div>
             </div>
@@ -111,13 +111,13 @@ export default function GarageLiabilityIS({name, address, phone}) {
             <div className="my-1">
                 <b>Description of all operations:</b>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="110"/>
+                    <Input className="w-100 text-center" maxlength="110"/>
                 </div>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="110"/>
+                    <Input className="w-100 text-center" maxlength="110"/>
                 </div>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="110"/>
+                    <Input className="w-100 text-center" maxlength="110"/>
                 </div>
             </div>
 
@@ -125,13 +125,13 @@ export default function GarageLiabilityIS({name, address, phone}) {
                 <div class="col d-flex">
                     <b>Vehicle(s) Value:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="40"/>
                     </span>
                 </div>
                 <div class="col d-flex">
                     <b>Total Lot Coverage:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="35"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="35"/>
                     </span>
                 </div>
             </div>
@@ -139,10 +139,10 @@ export default function GarageLiabilityIS({name, address, phone}) {
             <div className="my-1">
                 <b>List any additional insureds to be named and advise what their interest is in this operation:</b>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="110"/>
+                    <Input className="w-100 text-center" maxlength="110"/>
                 </div>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="110"/>
+                    <Input className="w-100 text-center" maxlength="110"/>
                 </div>
             </div>
 
@@ -184,7 +184,7 @@ export default function GarageLiabilityIS({name, address, phone}) {
                 </div>
                 <div>
                     <b>Date: </b>
-                    <CDate/>
+                    <Input className="ms-1 text-center" maxlength="8" width = "80px"/>
                 </div>
             </div>
 

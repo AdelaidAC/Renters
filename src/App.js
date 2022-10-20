@@ -309,22 +309,22 @@ function App() {
 
         <div>
           <label className="mx-1 fw-bold" for="nameI">Insured’s Name:</label>
-          <input id="nameI" type="text" onChange={e => setNameI(e.target.value)}/> {console.log(nameInsured)}
+          <input id="nameI" type="text" autocomplete="off" maxlength="40" onChange={e => setNameI(e.target.value)}/> {console.log(nameInsured)}
         </div>
 
         <div>
           <label className="mx-1 fw-bold" for="initialsI">Initials:</label>
-          <input id="initialsI" type="text" style={{width: "60px"}} onChange={e => setInitialsI(e.target.value)}/> {console.log(initialsInsured)}
+          <input id="initialsI" type="text" autocomplete="off" maxlength="4" style={{width: "60px"}} onChange={e => setInitialsI(e.target.value)}/> {console.log(initialsInsured)}
         </div>
 
         <div>
           <label className="mx-1 fw-bold" for="addressI">Address:</label>
-          <input id="addressI" type="text" onChange={e => setAddressI(e.target.value)}/> {console.log(addressInsured)}
+          <input id="addressI" type="text" autocomplete="off" maxlength="80" onChange={e => setAddressI(e.target.value)}/> {console.log(addressInsured)}
         </div>
 
         <div>
-          <label className="mx-1 fw-bold" for="phoneI">Phone:</label>
-          <input id="phoneI" type="text" style={{width: "150px"}} onChange={e => setPhoneI(e.target.value)}/> {console.log(phoneInsured)}
+          <label className="mx-1 fw-bold" for="phoneI">Cell:</label>
+          <input id="phoneI" type="text" autocomplete="off" maxlength="16" placeholder="(000) 000-0000" style={{width: "150px"}} onChange={e => setPhoneI(e.target.value)}/> {console.log(phoneInsured)}
         </div>
 
         <div class="d-flex align-items-center">

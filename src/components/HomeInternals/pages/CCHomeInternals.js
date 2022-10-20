@@ -1,8 +1,9 @@
 import React from 'react'
+import CDate from '../../CDate'
 import Input from '../../Input'
 import Logo from '../../Logo'
 
-export default function CCA({name, address}) {
+export default function CCHomeInternals({name, initials, address, phone}) {
     
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -47,7 +48,7 @@ export default function CCA({name, address}) {
                 
                 <div className="row text-center pb-2">
                     <div className="col-12">
-                        <Input width="80%" className="text-center" value={name}/>
+                        <Input width="80%" className="text-center" maxlength="80"/>
                     </div>
                 </div>
                 
@@ -58,7 +59,7 @@ export default function CCA({name, address}) {
                 </div>
                 <div className="row text-center pb-2">
                     <div className="col-12">
-                        <Input width="80%" className="text-center" value={address}/>
+                        <Input width="80%" className="text-center" maxlength="80"/>
                     </div>
                 </div>
                 
@@ -169,7 +170,7 @@ export default function CCA({name, address}) {
                 <div className="row py-2 font-9">
                     <div className="col-8 fw-bold">
                         Name, exactly as it appears on the card:
-                        <Input width = "54%" className="text-center ms-1" value={name}/>
+                        <Input width = "54%" className="text-center ms-1" maxlength="40"/>
                     </div>
                     <div className="col-4 text-end">
                         * 3 digit # on the back of credit card
@@ -218,7 +219,7 @@ export default function CCA({name, address}) {
                 
                 <div className="row py-2">
                     <div className="col-12 text-center">
-                        On <input type="date" className='text-center'/>, I authorize Adriana's Insurance Services to charge <Input width = "15%" maxlength="15" className="text-center"/>. However,
+                        On <CDate/>, I authorize Adriana's Insurance Services to charge <Input width = "15%" maxlength="15" className="text-center"/>. However,
                         if a balance is owed, the remaining balance of <Input width = "15%" maxlength="15" className="text-center"/> will be charged on <input type="date" className='text-center'/>.
                     </div>
                 </div>
@@ -280,7 +281,7 @@ export default function CCA({name, address}) {
                             </span>
                         </div>
                         <div>
-                            Date of Authorization: <input type="date" className='text-center'/>
+                            Date of Authorization: <CDate/>
                         </div>
                     </div>
 

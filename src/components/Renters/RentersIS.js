@@ -1,10 +1,9 @@
 import React from 'react'
 import Input from '../Input'
-import CDate from '../CDate';
 import Title from '../Title'
 import Logo from '../Logo'
 
-export default function RentersIS({name, initials, address, phone}) {
+export default function RentersIS({name, address, phone}) {
     
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -26,13 +25,13 @@ export default function RentersIS({name, initials, address, phone}) {
                 <div className='d-flex col-9'>
                     <b>Legal Owner Name:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40" value={name}/>
+                        <Input className="w-100 ms-1 text-center" value={name}/>
                     </span>
                 </div>
                 <div className='d-flex'>
                     <b>Date of Birth:</b>
                     <span className="flex-fill">
-                        <Input className="ms-1" maxlength="40" width = "80px" placeholder = "mm/dd/yyyy"/>
+                        <Input className="ms-1 text-center" maxlength="8" width = "80px"/>
                     </span>
                 </div>
             </div>
@@ -41,13 +40,13 @@ export default function RentersIS({name, initials, address, phone}) {
                 <div className='d-flex col-9'>
                     <b>Co-Applicant Name:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="40"/>
                     </span>
                 </div>
                 <div className='d-flex'>
                     <b>Date of Birth:</b>
                     <span className="flex-fill">
-                        <Input className="ms-1" maxlength="40" width = "80px" placeholder = "mm/dd/yyyy"/>
+                        <Input className="ms-1 text-center" maxlength="8" width = "80px"/>
                     </span>
                 </div>
             </div>
@@ -56,13 +55,13 @@ export default function RentersIS({name, initials, address, phone}) {
                 <div class="col d-flex">
                     <b>Home Phone:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="40"/>
                     </span>
                 </div>
                 <div class="col d-flex">
                     <b>Cell Phone:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="45"/>
+                        <Input className="w-100 ms-1 text-center" value={phone}/>
                     </span>
                 </div>
             </div>
@@ -71,13 +70,13 @@ export default function RentersIS({name, initials, address, phone}) {
                 <div class="col d-flex">
                     <b>Work Phone:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="40"/>
                     </span>
                 </div>
                 <div class="col d-flex">
                     <b>Email:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="45"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="45"/>
                     </span>
                 </div>
             </div>
@@ -85,14 +84,14 @@ export default function RentersIS({name, initials, address, phone}) {
             <div className="d-flex my-1">
                 <b>Mailing Address:</b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="80"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="80"/>
                 </span>
             </div>
 
             <div className="d-flex my-1">
                 <b>Property Address:</b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="80"/>
+                    <Input className="w-100 ms-1 text-center" value={address}/>
                 </span>
             </div>
 
@@ -103,14 +102,14 @@ export default function RentersIS({name, initials, address, phone}) {
             <div className="text-center">
                 <b>Name:</b>
                 <span className="flex-fill">
-                    <Input className="ms-1" maxlength="80" width="500px"/>
+                    <Input className="ms-1 text-center" maxlength="80" width="500px"/>
                 </span>
             </div>
 
             <div className="text-center">
                 <b>Address:</b>
                 <span className="flex-fill">
-                    <Input className="ms-1" maxlength="80" width="500px"/>
+                    <Input className="ms-1 text-center" maxlength="80" width="500px"/>
                 </span>
             </div>
 
@@ -148,12 +147,12 @@ export default function RentersIS({name, initials, address, phone}) {
                 <div className='d-flex flex-fill'>
                     <b>Applicant Signature: </b>
                     <span className='flex-fill mx-1'>
-                        <Input className="w-100" maxlength="80" disabled = "true"/>
+                        <Input className="w-100 text-center" maxlength="80" disabled = "true"/>
                     </span>
                 </div>
                 <div>
                     <b>Date: </b>
-                    <CDate/>
+                    <Input className="ms-1 text-center" maxlength="8" width = "80px"/>
                 </div>
             </div>
 

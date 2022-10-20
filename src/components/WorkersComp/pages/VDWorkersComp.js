@@ -1,10 +1,9 @@
 import React from "react";
-import CDate from "../../CDate";
 import Input from "../../Input";
 import Logo from "../../Logo";
 import Title from "../../Title";
 
-export default function VDWorkersComp({name, initials, address, phone}) {
+export default function VDWorkersComp({name}) {
     return (
         <div className="sheet font-11 text-justify">
             
@@ -16,13 +15,13 @@ export default function VDWorkersComp({name, initials, address, phone}) {
                 <div class="col d-flex">
                     <b>Named Insured:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40" value={name}/>
+                        <Input className="w-100 ms-1 text-center" value={name}/>
                     </span>
                 </div>
                 <div class="col d-flex">
                     <b>DBA:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="40"/>
                     </span>
                 </div>
             </div>
@@ -31,16 +30,16 @@ export default function VDWorkersComp({name, initials, address, phone}) {
                 <div className='d-flex col-8'>
                     <b>Company Name:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1" maxlength="40"/>
+                        <Input className="w-100 ms-1 text-center" maxlength="40"/>
                     </span>
                 </div>
                 <div>
-                    <b>Date Coverage Starts: </b><CDate/>
+                    <b>Date Coverage Starts: </b><input className="text-center" type="date" style={{width: "110px"}}/>
                 </div>
             </div>
 
             <p className="my-3">
-                I, <Input width="260px" maxlength="40" value={name}/> hereby appoint Adriana’s Insurance Svcs, Inc. as my Broker/Attorney in fact
+                I, <Input className="text-center" width="260px" value={name}/> hereby appoint Adriana’s Insurance Svcs, Inc. as my Broker/Attorney in fact
                 to sign papers, applications, documents that are necessary in order to secure the insurance coverage specified below.
             </p>
 
@@ -135,13 +134,13 @@ export default function VDWorkersComp({name, initials, address, phone}) {
                             Class Codes
                         </td>
                         <td>
-                            <div>&nbsp;&nbsp;&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/></div>
-                            <div>&nbsp;&nbsp;&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/></div>
-                            <div>&nbsp;&nbsp;&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/></div>
-                            <div>&nbsp;&nbsp;&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/></div>
-                            <div>&nbsp;&nbsp;&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/></div>
-                            <div>&nbsp;&nbsp;&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/></div>
-                            <div>&nbsp;&nbsp;&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/>&nbsp;<Input maxlength="5"/></div>
+                            <div>&nbsp;&nbsp;&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/></div>
+                            <div>&nbsp;&nbsp;&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/></div>
+                            <div>&nbsp;&nbsp;&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/></div>
+                            <div>&nbsp;&nbsp;&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/></div>
+                            <div>&nbsp;&nbsp;&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/></div>
+                            <div>&nbsp;&nbsp;&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/></div>
+                            <div>&nbsp;&nbsp;&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/>&nbsp;<Input className="text-center" maxlength="5"/></div>
                             
                         </td>
                     </tr>
@@ -151,23 +150,23 @@ export default function VDWorkersComp({name, initials, address, phone}) {
             <div className="d-flex ">
                 <label><strong>Description of Operations:</strong></label>
                 <strong className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="70"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="70"/>
                 </strong>
             </div>
 
             <div className="d-flex">
                 <b>Restrictions:</b>
                 <span className="flex-fill">
-                    <Input className="w-100 ms-1" maxlength="83"/>
+                    <Input className="w-100 ms-1 text-center" maxlength="83"/>
                 </span>
             </div>
 
             <div>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="93"/>
+                    <Input className="w-100 text-center" maxlength="93"/>
                 </div>
                 <div className="flex-fill">
-                    <Input className="w-100" maxlength="93"/>
+                    <Input className="w-100 text-center" maxlength="93"/>
                 </div>
             </div>
 
@@ -180,19 +179,19 @@ export default function VDWorkersComp({name, initials, address, phone}) {
             <div className='d-flex justify-content-between text-center'>
                 <div>
                     <p className='mb-0'><strong>Gross Annual Sales:</strong></p>
-                    <Input width = "170px" maxlength="20"/>
+                    <Input className="text-center" width = "170px" maxlength="20"/>
                 </div>
                 <div>
                     <p className='mb-0'><strong>Employee Payroll:</strong></p>
-                    <Input width = "170px" maxlength="20"/>
+                    <Input className="text-center" width = "170px" maxlength="20"/>
                 </div>
                 <div>
                     <p className='mb-0'><strong>P.T. Employees:</strong></p>
-                    <Input width = "170px" maxlength="20"/>
+                    <Input className="text-center" width = "170px" maxlength="20"/>
                 </div>
                 <div>
                     <p className='mb-0'><strong>F.T. Employees:</strong></p>
-                    <Input width = "170px" maxlength="20"/>
+                    <Input className="text-center" width = "170px" maxlength="20"/>
                 </div>
             </div>
 
@@ -201,15 +200,15 @@ export default function VDWorkersComp({name, initials, address, phone}) {
                 <div className='d-flex justify-content-between text-center'>
                     <div >
                         <label><strong>TOTAL:</strong></label>
-                        <Input width = "125px" maxlength="16"/>
+                        <Input className="text-center" width = "125px" maxlength="16"/>
                     </div>
                     <div>
                         <label><strong>Down Payment:</strong></label>
-                        <Input width = "125px" maxlength="16"/>
+                        <Input className="text-center" width = "125px" maxlength="16"/>
                     </div>
                     <div>
                         <label><strong>Payments of:</strong></label>
-                        <Input width = "125px" maxlength="16"/>
+                        <Input className="text-center" width = "125px" maxlength="16"/>
                     </div>
                 </div>
                 <div className="border border-1 border-dark mt-1 mb-4"></div>
@@ -218,7 +217,7 @@ export default function VDWorkersComp({name, initials, address, phone}) {
             <div className="d-flex justify-content-between my-3">
                 <div></div>
                 <div>
-                    <b>Date:</b> <CDate/>
+                    <b>Date: </b><input type="date" className="text-center"/>
                 </div>
             </div>
             
