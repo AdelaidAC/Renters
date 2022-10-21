@@ -375,6 +375,7 @@ function App() {
         {homeVisible &&
           <div class="d-flex align-items-center">
             <label className="ms-2 fw-bold" for="doc">Pages:</label>
+            <input class="ms-2 me-1" type="checkbox" value="renters" name="pagesH" onChange={handleH}/> Renters
             <input class="ms-2 me-1" type="checkbox" value="dp3" name="pagesH" onChange={handleH}/> DP3/HO3/Mobile
             <input class="ms-2 me-1" type="checkbox" value="ho4" name="pagesH" onChange={handleH}/> HO4
             <input class="ms-2 me-1" type="checkbox" value="ho6" name="pagesH" onChange={handleH}/> HO6

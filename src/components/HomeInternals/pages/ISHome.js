@@ -291,14 +291,18 @@ export default function ISHome() {
                 Planning Department changes factors which affect the premium. I agree and understand that if the correct premium is not paid, my policy will expire, or be cancelled for non payment
                 of premium, based on the correct premium developed.
                 <br/><br/>
-                Yo estoy aquí aplicando en Adriana’s Insurance Services, Inc. para una Poliza de Seguro. Y acepto que esta poliza es Nula o Cancelada si la información que les doy es falsa o erronea. Yo entiendo
-                que si existe una perdida previa en mi casa al tiempo de este trámite NO tendré ningún tipo de covertura atravez de este seguro. Estoy enterado(a) que la poliza no me cubre robo al
-                menos que tenga comprobante de entrada forsoza. Tambien entiendo que la unidad no sera cubierta ya que es la responsabilidad de el propietaro o de la agencia de gestion y no esta
-                cubierta bajo seguro de inquilino.
+                <i>
+                    Yo estoy aquí aplicando en Adriana’s Insurance Services, Inc. para una Poliza de Seguro. Y acepto que esta poliza es Nula o Cancelada si la información que les doy es falsa o erronea. Yo entiendo
+                    que si existe una perdida previa en mi casa al tiempo de este trámite NO tendré ningún tipo de covertura atravez de este seguro. Estoy enterado(a) que la poliza no me cubre robo al
+                    menos que tenga comprobante de entrada forsoza. Tambien entiendo que la unidad no sera cubierta ya que es la responsabilidad de el propietaro o de la agencia de gestion y no esta
+                    cubierta bajo seguro de inquilino.
+                </i>
                 <br/><br/>
-                Acepto que la Compañia de Seguros puede corregir el premium de mi seguro en caso de que el premium sea incorrecto debido a la información obtenida atravez de otros servicios
-                adicionales pero no limitados como City Hall, City Planning Department y otros factores que puedan afectar el premium de mi seguro.. Yo acepto y entiendo que si el premium de mi
-                seguro correcto en mi poliza No es pagado, mi poliza puede ser cancelada, expirada o no renovada basado en el premium correcto.
+                <i>
+                    Acepto que la Compañia de Seguros puede corregir el premium de mi seguro en caso de que el premium sea incorrecto debido a la información obtenida atravez de otros servicios
+                    adicionales pero no limitados como City Hall, City Planning Department y otros factores que puedan afectar el premium de mi seguro.. Yo acepto y entiendo que si el premium de mi
+                    seguro correcto en mi poliza No es pagado, mi poliza puede ser cancelada, expirada o no renovada basado en el premium correcto.
+                </i>
             </p>
             
             <div className="d-flex justify-content-between mt-4 mb-1">

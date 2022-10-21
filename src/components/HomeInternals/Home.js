@@ -8,16 +8,23 @@ import HO6 from "./pages/HO6";
 import ISHome from "./pages/ISHome";
 import PAHomeInternals from "./pages/PAHomeInternals";
 import PNHomeInternals from "./pages/PNHomeInternals";
+import RentersIS from "./pages/RentersIS";
 import SBFHomeInternals from "./pages/SBFHomeInternals";
 
 export default function Home({pages, name, initials, address, phone}) {
 
-    let brokerFee, balanceDue, creditCard, dP3, hO4, hO6;
+    let brokerFee, balanceDue, creditCard, dP3, hO4, hO6, renters;
 
     if (Object.values(pages).includes("spanishBF")) {
         brokerFee = <SBFHomeInternals name={name}/>;
     } else {
         brokerFee = <BFHomeInternals name={name}/>;
+    }
+
+    if (Object.values(pages).includes("renters")) {
+        renters = <RentersIS/>;
+    } else {
+        renters = <ISHome/>;
     }
 
     if (Object.values(pages).includes("balanceDue")) {
@@ -47,7 +54,7 @@ export default function Home({pages, name, initials, address, phone}) {
     return (
         <div>
             <Badge text="1"/> 
-            <ISHome/>
+            {renters}
             <Badge text="2"/> 
             <PAHomeInternals name={name}/>
 

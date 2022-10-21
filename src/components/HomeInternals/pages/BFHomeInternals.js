@@ -1,7 +1,7 @@
 import React from 'react'
 import Input from '../../Input'
 import Logo from '../../Logo'
-import CDate from '../../CDate';
+import Signature from '../../Signature'
 
 export default function BFHomeInternals({name}) {
 
@@ -16,7 +16,7 @@ export default function BFHomeInternals({name}) {
 
             <div className='d-flex justify-content-between my-4'>
                 <div className='d-flex col-8'>
-                    <b>Client Name:</b>
+                    <b>Named Insured:</b>
                     <span className="flex-fill">
                         <Input className="w-100 ms-1 text-center" maxlength="40" value={name}/>
                     </span>
@@ -132,11 +132,13 @@ export default function BFHomeInternals({name}) {
                 rules set up by the DR, in accordance with California Code of Civil Procedure, without right of appeal.
             </p>
             
-            <div className='d-flex justify-content-center text-center pt-5'>
+            {/*<div className='d-flex justify-content-center text-center pt-5'>
                 <div className='border-top border-dark' style={{ width: "300px"}}>
                     <p className='mb-0 fw-bold'>Broker's Signature</p>
                 </div>
-            </div>
+            </div>*/}
+
+            <Signature firstSignature="Named Insured Signature"/>
             
             <p className='text-center mt-2 fw-bold lh-2'>
                 If you have any questions or complaints please call our customer service toll free number at 1-888-290-4040. In any case of questions/problems concerning broker fees or insurance,
