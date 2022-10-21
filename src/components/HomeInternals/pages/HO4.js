@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react';
+import CurrencyFormat from 'react-currency-format';
 import Input from "../../Input";
 import Logo from "../../Logo";
 import Title from "../../Title";
@@ -41,15 +42,15 @@ export default function HO4({name, initials}) {
     const [checked3, setChecked3] = useState(false);
 
     useEffect(() => {
-        checked1 === true ? setC6("Included") : setC6("Not Included");
+        checked1 === true ? setC6("Included") : setC6("");
     }, [checked1])
 
     useEffect(() => {
-        checked2 === true ? setC7("Included") : setC7("Not Included");
+        checked2 === true ? setC7("Included") : setC7("");
     }, [checked2])
 
     useEffect(() => {
-        checked3 === true ? setC8("Included") : setC8("Not Included");
+        checked3 === true ? setC8("Included") : setC8("");
     }, [checked3])
 
     useEffect(() => {
@@ -58,7 +59,7 @@ export default function HO4({name, initials}) {
             setChkCYes(true);
             setChkCNo(false);
         } else {
-            setC1("Not Included");
+            setC1("");
             setChkCYes(false);
             setChkCNo(true);
         }
@@ -70,7 +71,7 @@ export default function HO4({name, initials}) {
             setChkDYes(true);
             setChkDNo(false);
         } else {
-            setC2("Not Included");
+            setC2("");
             setChkDYes(false);
             setChkDNo(true);
         }
@@ -82,7 +83,7 @@ export default function HO4({name, initials}) {
             setChkEYes(true);
             setChkENo(false);
         } else {
-            setC3("Not Included");
+            setC3("");
             setChkEYes(false);
             setChkENo(true);
         }
@@ -94,7 +95,7 @@ export default function HO4({name, initials}) {
             setChkFYes(true);
             setChkFNo(false);
         } else {
-            setC4("Not Included");
+            setC4("");
             setChkFYes(false);
             setChkFNo(true);
         }
@@ -104,12 +105,12 @@ export default function HO4({name, initials}) {
         if (deductible.trim().length !== 0) {
             setC5("Included");
         } else {
-            setC5("Not Included");
+            setC5("");
         }
     }, [deductible])
 
     return (
-        <div className="sheet font-11 lh-1 text-justify">
+        <div className="sheet font-11 lh-3 text-justify">
             
             <Logo />
 
@@ -118,7 +119,7 @@ export default function HO4({name, initials}) {
             <p className="mx-0 mb-0 mt-3">
                 I <Input className="text-center" width="400px" value={name}/>hereby appoint Adriana's Insurance Services Inc. as my Broker / Attorney in fact
                 to sign papers, applications, documents that are necessary in order to secure the insurance coverage specified below. I have
-                also been advised of the importance of the effective date of the policy and have chosen to have coverage start on: <input type="date" className='text-center'/>
+                also been advised of the importance of the effective date of the policy and have chosen to have coverage start on: <input type="date" className='text-center' style={{width: "100px"}}/>
             </p>
 
             <table className="fw-bold my-3">
@@ -137,15 +138,15 @@ export default function HO4({name, initials}) {
                     </td>
                     <td>C. Personal Property</td>
                     <td>
-                        $
-                        <input 
-                            className='input-default text-center'
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'} 
                             id = "inputC"
                             name = "inputC"
-                            type = "text" 
                             autoComplete = "off"
-                            style = {{width:"80px"}}
                             maxlength="10"
+                            style = {{width:"80px"}}
+                            className='fw-bold text-center input-default'
                             onChange = {e => setInputC(e.target.value)}
                         />
                     </td>
@@ -156,15 +157,15 @@ export default function HO4({name, initials}) {
                 <tr>
                     <td>D. Loss of Use</td>
                     <td>
-                        $
-                        <input
-                            className='input-default text-center' 
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'} 
                             id = "inputD"
                             name = "inputD"
-                            type = "text" 
                             autoComplete = "off"
+                            maxlength="10"
                             style = {{width:"80px"}}
-                            maxlength="10" 
+                            className='fw-bold text-center input-default'
                             onChange = {e => setInputD(e.target.value)}
                         />
                     </td>
@@ -175,15 +176,15 @@ export default function HO4({name, initials}) {
                 <tr>
                     <td>E. Personal Liability</td>
                     <td>
-                        $
-                        <input
-                            className='input-default text-center' 
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'} 
                             id = "inputE"
                             name = "inputE"
-                            type = "text" 
                             autoComplete = "off"
+                            maxlength="10"
                             style = {{width:"80px"}}
-                            maxlength="10" 
+                            className='fw-bold text-center input-default'
                             onChange = {e => setInputE(e.target.value)}
                         />
                     </td>
@@ -201,15 +202,15 @@ export default function HO4({name, initials}) {
                     </td>
                     <td>F. Medical Payments</td>
                     <td>
-                        $
-                        <input
-                            className='input-default text-center' 
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'} 
                             id = "inputF"
                             name = "inputF"
-                            type = "text" 
                             autoComplete = "off"
+                            maxlength="10"
                             style = {{width:"80px"}}
-                            maxlength="10" 
+                            className='fw-bold text-center input-default'
                             onChange = {e => setInputF(e.target.value)}
                         />
                     </td>
@@ -220,12 +221,13 @@ export default function HO4({name, initials}) {
                 <tr>
                     <td>Deductible</td>
                     <td>
-                        $
-                        <input 
-                            className='input-default text-center'
-                            type="text" 
-                            style={{width:"80px"}}
-                            maxlength="10" 
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'}
+                            autoComplete = "off"
+                            maxlength="10"
+                            style = {{width:"80px"}}
+                            className='fw-bold text-center input-default'
                             onChange={e => setDeductible(e.target.value)}
                         />
                     </td>
@@ -322,7 +324,7 @@ export default function HO4({name, initials}) {
                     </td>
                     <td className="col-9">
                         The <u><b><i>Deductible</i></b></u> is the amount that the policyholder has agreed to pay on each claim. I understand and agree
-                        that my <u><b><i>Deductible</i></b></u> is <b>$<Input className="text-center" value={deductible} width="80px"/></b>.
+                        that my <u><b><i>Deductible</i></b></u> is <Input className="text-center fw-bold" value={deductible} width="80px"/>.
                     </td>
                     <td className='text-end'>
                         <span>
@@ -412,10 +414,12 @@ export default function HO4({name, initials}) {
                 </tr>
             </table>
 
-            <div className="d-flex justify-content-between my-3">
-                <div></div>
+            <div className="d-flex justify-content-between mt-5 fw-bold">
                 <div>
-                    <b>Date:</b> <input className='text-center' type="date"/>
+                    Named Insured Signature: <Input width="300px" disabled/>
+                </div>
+                <div>
+                    Date: <input className='text-center' type="date" style={{width: "100px"}}/>
                 </div>
             </div>
             

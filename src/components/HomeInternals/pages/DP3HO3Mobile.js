@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react';
+import CurrencyFormat from 'react-currency-format';
 import Input from "../../Input";
 import Logo from "../../Logo";
 import Title from "../../Title";
@@ -57,15 +58,10 @@ export default function DP3HO3Mobile({name, initials}) {
 
 
     const [occupantType, setOccupantType] = useState("owner");
-    {/*const [policyType, setPolicyType] = useState("selectPolicyType");*/}
 
     const handleOccupantType = (e) => {
         setOccupantType(e.target.value);
     }
-
-    {/*const handlePolicyType = (e) => {
-        setPolicyType(e.target.value);
-    }*/} 
 
     useEffect(() => {
         if(occupantType === "owner" || occupantType === "secondary" || occupantType === "seasonal" || occupantType === "vacant"){
@@ -81,19 +77,19 @@ export default function DP3HO3Mobile({name, initials}) {
     }, [occupantType])
 
     useEffect(() => {
-        checked8 === true ? setC8("Included") : setC8("Not Included");
+        checked8 === true ? setC8("Included") : setC8("");
     }, [checked8])
 
     useEffect(() => {
-        checked9 === true ? setC9("Included") : setC9("Not Included");
+        checked9 === true ? setC9("Included") : setC9("");
     }, [checked9])
 
     useEffect(() => {
-        checked10 === true ? setC10("Included") : setC10("Not Included");
+        checked10 === true ? setC10("Included") : setC10("");
     }, [checked10])
 
     useEffect(() => {
-        checked11 === true ? setC11("Included") : setC11("Not Included");
+        checked11 === true ? setC11("Included") : setC11("");
     }, [checked11])
 
     useEffect(() => {
@@ -102,7 +98,7 @@ export default function DP3HO3Mobile({name, initials}) {
             setChkAYes(true);
             setChkANo(false);
         } else {
-            setC1("Not Included");
+            setC1("");
             setChkAYes(false);
             setChkANo(true);
         }
@@ -114,7 +110,7 @@ export default function DP3HO3Mobile({name, initials}) {
             setChkBYes(true);
             setChkBNo(false);
         } else {
-            setC2("Not Included");
+            setC2("");
             setChkBYes(false);
             setChkBNo(true);
         }
@@ -126,7 +122,7 @@ export default function DP3HO3Mobile({name, initials}) {
             setChkCYes(true);
             setChkCNo(false);
         } else {
-            setC3("Not Included");
+            setC3("");
             setChkCYes(false);
             setChkCNo(true);
         }
@@ -138,7 +134,7 @@ export default function DP3HO3Mobile({name, initials}) {
             setChkDYes(true);
             setChkDNo(false);
         } else {
-            setC4("Not Included");
+            setC4("");
             setChkDYes(false);
             setChkDNo(true);
         }
@@ -150,7 +146,7 @@ export default function DP3HO3Mobile({name, initials}) {
             setChkEYes(true);
             setChkENo(false);
         } else {
-            setC5("Not Included");
+            setC5("");
             setChkEYes(false);
             setChkENo(true);
         }
@@ -162,7 +158,7 @@ export default function DP3HO3Mobile({name, initials}) {
             setChkFYes(true);
             setChkFNo(false);
         } else {
-            setC6("Not Included");
+            setC6("");
             setChkFYes(false);
             setChkFNo(true);
         }
@@ -172,15 +168,9 @@ export default function DP3HO3Mobile({name, initials}) {
         if (deductible.trim().length !== 0) {
             setC7("Included");
         } else {
-            setC7("Not Included");
+            setC7("");
         }
     }, [deductible])
-
-      {/*useEffect(() => {
-        policyType === "dp3" ? setBondVisible(true) : setBondVisible(false);
-        policyType === "ho3" ? setCommercialAutoVisible(true) : setCommercialAutoVisible(false);
-        policyType === "mobile" ? setFloodVisible(true) : setFloodVisible(false);
-      }, [policyType])*/}
 
     return (
         <div className="sheet font-11 lh-1 text-justify">
@@ -192,7 +182,7 @@ export default function DP3HO3Mobile({name, initials}) {
             <p className="mx-0 mb-0 mt-3">
                 I <Input className="text-center" width="400px" value={name}/>hereby appoint Adriana's Insurance Services Inc. as my Broker / Attorney in fact
                 to sign papers, applications, documents that are necessary in order to secure the insurance coverage specified below. I have
-                also been advised of the importance of the effective date of the policy and have chosen to have coverage start on: <input type="date" className='text-center'/>
+                also been advised of the importance of the effective date of the policy and have chosen to have coverage start on: <input type="date" className='text-center' style={{width: "100px"}}/>
             </p>
 
             <table className="fw-bold my-3">
@@ -214,15 +204,15 @@ export default function DP3HO3Mobile({name, initials}) {
                     </td>
                     <td>A. Dwelling</td>
                     <td>
-                        $
-                        <input 
-                            className='input-default text-center'
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'} 
                             id = "inputA"
                             name = "inputA"
-                            type = "text" 
                             autoComplete = "off"
-                            style = {{width:"80px"}}
                             maxlength="10"
+                            style = {{width:"80px"}}
+                            className='fw-bold text-center input-default'
                             onChange = {e => setDwelling(e.target.value)}
                         />
                     </td>
@@ -233,15 +223,15 @@ export default function DP3HO3Mobile({name, initials}) {
                 <tr>
                     <td>B. Other Structures</td>
                     <td>
-                        $
-                        <input
-                            className='input-default text-center' 
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'} 
                             id = "inputB"
                             name = "inputB"
-                            type = "text" 
                             autoComplete = "off"
+                            maxlength="10"
                             style = {{width:"80px"}}
-                            maxlength="10" 
+                            className='fw-bold text-center input-default'
                             onChange = {e => setInputB(e.target.value)}
                         />
                     </td>
@@ -252,15 +242,15 @@ export default function DP3HO3Mobile({name, initials}) {
                 <tr>
                     <td>C. Personal Property</td>
                     <td>
-                        $
-                        <input
-                            className='input-default text-center' 
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'} 
                             id = "inputC"
                             name = "inputC"
-                            type = "text" 
                             autoComplete = "off"
+                            maxlength="10"
                             style = {{width:"80px"}}
-                            maxlength="10" 
+                            className='fw-bold text-center input-default'
                             onChange = {e => setInputC(e.target.value)}
                         />
                     </td>
@@ -282,15 +272,15 @@ export default function DP3HO3Mobile({name, initials}) {
                     </td>
                     <td>D. {d}</td> {/* D. Loss Of Use */}
                     <td>
-                        $
-                        <input
-                            className='input-default text-center' 
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'} 
                             id = "inputD"
                             name = "inputD"
-                            type = "text" 
                             autoComplete = "off"
+                            maxlength="10"
                             style = {{width:"80px"}}
-                            maxlength="10" 
+                            className='fw-bold text-center input-default'
                             onChange = {e => setInputD(e.target.value)}
                         />
                     </td>
@@ -301,15 +291,15 @@ export default function DP3HO3Mobile({name, initials}) {
                 <tr>
                     <td>E. {e}</td> {/* E. Personal Liability */}
                     <td>
-                        $
-                        <input
-                            className='input-default text-center' 
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'} 
                             id = "inputE"
                             name = "inputE"
-                            type = "text" 
                             autoComplete = "off"
+                            maxlength="10"
                             style = {{width:"80px"}}
-                            maxlength="10" 
+                            className='fw-bold text-center input-default'
                             onChange = {e => setInputE(e.target.value)}
                         />
                     </td>
@@ -320,15 +310,15 @@ export default function DP3HO3Mobile({name, initials}) {
                 <tr>
                     <td>F. Medical Payments</td>
                     <td>
-                        $
-                        <input
-                            className='input-default text-center' 
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'} 
                             id = "inputF"
                             name = "inputF"
-                            type = "text" 
                             autoComplete = "off"
+                            maxlength="10"
                             style = {{width:"80px"}}
-                            maxlength="10" 
+                            className='fw-bold text-center input-default'
                             onChange = {e => setInputF(e.target.value)}
                         />
                     </td>
@@ -340,12 +330,13 @@ export default function DP3HO3Mobile({name, initials}) {
                     <td></td>
                     <td>Deductible</td>
                     <td>
-                        $
-                        <input 
-                            className='input-default text-center'
-                            type="text" 
-                            style={{width:"80px"}}
-                            maxlength="10" 
+                        <CurrencyFormat 
+                            thousandSeparator={true} 
+                            prefix={'$'}
+                            autoComplete = "off"
+                            maxlength="10"
+                            style = {{width:"80px"}}
+                            className='fw-bold text-center input-default'
                             onChange={e => setDeductible(e.target.value)}
                         />
                     </td>
@@ -363,7 +354,7 @@ export default function DP3HO3Mobile({name, initials}) {
                     <td className="col-9">
                         I understand that <u><b><i>Dwelling</i></b></u> coverage covers my house and attached structures against fire. Dwelling
                         Amount is based on the square footage given by the insured and multiplied by labor costs in that area. I
-                        understand and agree with the dwelling amount of <b>$<Input className="text-center" value={dwelling} width="80px"/></b>.
+                        understand and agree with the dwelling amount of <Input className="text-center fw-bold" value={dwelling} width="80px"/>.
                     </td>
                     <td className='text-end'>
                         <span>
@@ -484,7 +475,7 @@ export default function DP3HO3Mobile({name, initials}) {
                     </td>
                     <td className="col-9">
                         The <u><b><i>Deductible</i></b></u> is the amount that the policyholder has agreed to pay on each claim. I understand and agree
-                        that my <u><b><i>Deductible</i></b></u> is <b>$<Input className="text-center" value={deductible} width="80px"/></b>.
+                        that my <u><b><i>Deductible</i></b></u> is <Input className="text-center fw-bold" value={deductible} width="80px"/>.
                     </td>
                     <td className='text-end'>
                         <span>
@@ -600,10 +591,12 @@ export default function DP3HO3Mobile({name, initials}) {
                 </tr>
             </table>
 
-            <div className="d-flex justify-content-between my-3">
-                <div></div>
+            <div className="d-flex justify-content-between mt-5 fw-bold">
                 <div>
-                    <b>Date:</b> <input className='text-center' type="date"/>
+                    Named Insured Signature: <Input width="300px" disabled/>
+                </div>
+                <div>
+                    Date: <input className='text-center' type="date" style={{width: "100px"}}/>
                 </div>
             </div>
             

@@ -1,19 +1,21 @@
-import React from 'react'
+import moment from 'moment/moment'
+import React, { useEffect, useState} from 'react';
+import Signature from '../../Signature'
 import Input from '../../Input'
 import Logo from '../../Logo'
 import Title from '../../Title'
 
 const agreementValues = [
-    "PROOF OF PRIOR FOR THE LAST", 
-    "PROOF OF NO LOSSES IN THE PAST 5 YEARS", 
-    "VALID IDENTIFICATION FOR APPLICANT", 
-    "INSPECTION OF PREMISES AND/OR OPERATIONS", 
-    "PROOF OF LIVING IN PROPERTY INSURED", 
-    "VERIFICATION OF LOCATION INFORMATION", 
-    "PROOF OF MARRIAGE", 
-    "MORTGAGEE, MORTGAGEE CLAUSE, AND LOAN NUMBER", 
-    "BALANCE DUE", 
-    "OTHER"
+    "Proof of prior for the last", 
+    "Proof of no losses in the past 5 years", 
+    "Valid identification for applicant", 
+    "Inspection of premises and/or operations", 
+    "Proof of living in property insured", 
+    "Verification of location information", 
+    "Proof of marriage", 
+    "Mortgagee, mortgagee clause, and loan number", 
+    "Balance due", 
+    "Other"
 ]
 
 export default function PAHomeInternals({name}) {
@@ -21,6 +23,10 @@ export default function PAHomeInternals({name}) {
     React.useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const [startDate, setStartDate] = useState('');
+
+    var endDate = moment(startDate).add(7, 'days').format('MM/DD/YYYY');
 
     return (
         
@@ -32,14 +38,14 @@ export default function PAHomeInternals({name}) {
 
             <div className='d-flex justify-content-between'>
                 <div className='d-flex col-8'>
-                    <b>Client Name:</b>
+                    <b>Named Insured:</b>
                     <span className="flex-fill">
                         <Input className="w-100 ms-1 text-center" maxlength="40" value={name}/>
                     </span>
                 </div>
                 <div>
                     <b>Date: </b>
-                    <input type='date' className='text-center'/>
+                    <input type='date' style={{width: "100px"}} className='text-center fw-bold' onChange = {e => setStartDate(e.target.value)}/>
                 </div>
             </div>
 
@@ -48,7 +54,7 @@ export default function PAHomeInternals({name}) {
             </p>*/}
 
             <p className='font-11 my-4'>
-                It is my stated intention to obtain insurance coverage effective <strong><input type='date' className='text-center'/></strong>, however I do not have copies of the following information with me:
+                It is my stated intention to obtain insurance coverage effective <Input value = {endDate} width = "80px" className = "text-center fw-bold"/>, however I do not have copies of the following information with me:
             </p>
             
             
@@ -96,7 +102,7 @@ export default function PAHomeInternals({name}) {
             </p>
 
             <p className="text-center my-4 font-11">
-                I hereby promise to provide the above-indicated information by <input type='date' className='text-center'/> to Adriana's Insurance Services, Inc.
+                I hereby promise to provide the above-indicated information by <Input value = {endDate} width = "80px" className = "text-center fw-bold"/> to Adriana's Insurance Services, Inc.
             </p>
             
             <p className="mb-5 lh-2 font-11">
@@ -105,11 +111,13 @@ export default function PAHomeInternals({name}) {
                 of my down payment and fully-earned Broker’s Fee, and I may incur a financial loss.
             </p>
 
-            <div className='d-flex justify-content-center text-center pt-4'>
+            {/*<div className='d-flex justify-content-center text-center pt-4'>
                 <div className='border-top border-dark' style={{ width: "300px"}}>
                     <p className='mb-0 fw-bold'>Broker's Signature</p>
                 </div>
-            </div>
+            </div>*/}
+
+            <Signature firstSignature="Named Insured Signature"/>
 
         </div>
 

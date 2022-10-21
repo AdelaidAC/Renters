@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Signature(props) {
     return (
-        <div className='d-flex justify-content-between mt-5 mx-5 pt-5 text-center'>
+        <div className='d-flex justify-content-between mt-5 mx-5 pt-5 text-center fw-bold'>
             <div className='border-top border-dark w-40'>
                 <p className='mb-0'>{props.firstSignature}</p>
             </div>
