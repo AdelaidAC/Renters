@@ -93,7 +93,7 @@ export default function PNHomeInternals({name, address, phone}) {
                     <p className='mb-0 fw-bold'>Insured’s Name</p>
                 </div>
                 <div>
-                    <input type="date"/>
+                    <input className='text-center' type="date"/>
                     <p className='mb-0 fw-bold'>Date</p>
                 </div>
             </div>

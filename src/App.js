@@ -12,7 +12,6 @@ import Trucking from './components/TruckingInternals/Trucking';
 import Workers from './components/WorkersComp/Workers';
 import SpecialEvent from './components/SpecialEvent/SpecialEvent';
 import GarageLiabilityIS from './components/GarageLiability/GarageLiabilityIS';
-import RentersIS from './components/Renters/RentersIS';
 
 
 const Page = React.forwardRef((
@@ -27,7 +26,6 @@ const Page = React.forwardRef((
     workersComp, 
     specialEvent,
     garageLiability,
-    renters,
     pageGL, 
     pageT, 
     pageWC, 
@@ -53,7 +51,6 @@ const Page = React.forwardRef((
       {workersComp && <Workers pages={pageWC} name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
       {specialEvent && <SpecialEvent name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
       {garageLiability && <GarageLiabilityIS name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
-      {renters && <RentersIS name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
       
     </div>
   )
@@ -279,7 +276,6 @@ function App() {
     document === "workersComp" ? setWorkersCompVisible(true) : setWorkersCompVisible(false);
     document === "specialEvent" ? setSpecialEventVisible(true) : setSpecialEventVisible(false);
     document === "garageLiability" ? setGarageLiabilityVisible(true) : setGarageLiabilityVisible(false);
-    document === "renters" ? setRentersVisible(true) : setRentersVisible(false);
   }, [document])
 
 
@@ -340,7 +336,6 @@ function App() {
               <option value="workersComp">Workers' Comp</option>
               <option value="specialEvent">Special Event</option>
               <option value="garageLiability">Garage Liability</option>
-              <option value="renters">Renters</option>
           </select>
         </div>
 
@@ -419,7 +414,6 @@ function App() {
         workersComp = {workersCompVisible}
         specialEvent = {specialEventVisible}
         garageLiability = {garageLiabilityVisible}
-        renters = {rentersVisible}
         pageGL = {pagesGL}
         pageT = {pagesT}
         pageWC = {pagesWC}

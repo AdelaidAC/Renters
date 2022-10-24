@@ -13,38 +13,51 @@ import SBFHomeInternals from "./pages/SBFHomeInternals";
 
 export default function Home({pages, name, initials, address, phone}) {
 
-    let brokerFee, balanceDue, creditCard, dP3, hO4, hO6, renters;
-
-    if (Object.values(pages).includes("spanishBF")) {
-        brokerFee = <SBFHomeInternals name={name}/>;
-    } else {
-        brokerFee = <BFHomeInternals name={name}/>;
-    }
+    let brokerFee, balanceDue, creditCard, dP3, hO4, hO6, renters, promiseA;
+    let count = 0;
 
     if (Object.values(pages).includes("renters")) {
-        renters = <RentersIS/>;
+        count++;
+        renters = <><Badge text={count}/><RentersIS/></>;
     } else {
-        renters = <ISHome/>;
-    }
-
-    if (Object.values(pages).includes("balanceDue")) {
-        balanceDue = <><Badge text="5"/><PNHomeInternals name={name} address={address} phone={phone}/></>;
-    }
-
-    if (Object.values(pages).includes("creditCard")) {
-        creditCard = <><Badge text="6"/><CCHomeInternals name={name} address={address}/></>;
+        count++;
+        renters = <><Badge text={count}/><ISHome/></>;
     }
 
     if (Object.values(pages).includes("dp3")) {
-        dP3 = <><Badge text="6"/><DP3HO3Mobile name={name} initials={initials}/></>;
+        count++;
+        dP3 = <><Badge text={count}/><DP3HO3Mobile name={name} initials={initials}/></>;
     }
 
     if (Object.values(pages).includes("ho4")) {
-        hO4 = <><Badge text="6"/><HO4 name={name} initials={initials}/></>;
+        count++;
+        hO4 = <><Badge text={count}/><HO4 name={name} initials={initials}/></>;
     }
 
     if (Object.values(pages).includes("ho6")) {
-        hO6 = <><Badge text="6"/><HO6 name={name} initials={initials}/></>;
+        count++;
+        hO6 = <><Badge text={count}/><HO6 name={name} initials={initials}/></>;
+    }
+    
+    count++;
+    promiseA = <><Badge text={count}/><PAHomeInternals name={name}/></>;
+
+    if (Object.values(pages).includes("spanishBF")) {
+        count++;
+        brokerFee = <><Badge text={count}/><SBFHomeInternals name={name}/></>;
+    } else {
+        count++;
+        brokerFee = <><Badge text={count}/><BFHomeInternals name={name}/></>;
+    }
+
+    if (Object.values(pages).includes("balanceDue")) {
+        count++;
+        balanceDue = <><Badge text={count}/><PNHomeInternals name={name} address={address} phone={phone}/></>;
+    }
+
+    if (Object.values(pages).includes("creditCard")) {
+        count++;
+        creditCard = <><Badge text={count}/><CCHomeInternals name={name} address={address}/></>;
     }
 
     React.useEffect(() => {
@@ -53,17 +66,18 @@ export default function Home({pages, name, initials, address, phone}) {
 
     return (
         <div>
-            <Badge text="1"/> 
+            
             {renters}
-            <Badge text="2"/> 
-            <PAHomeInternals name={name}/>
+
+            {dP3}
+            {hO4}
+            {hO6}
+
+            {promiseA}
 
             {brokerFee}
             {balanceDue}
             {creditCard}
-            {dP3}
-            {hO4}
-            {hO6}
             
         </div>
     );

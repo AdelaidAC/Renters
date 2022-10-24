@@ -1,7 +1,7 @@
 import React from 'react'
+import CurrencyFormat from 'react-currency-format';
 import Input from '../../Input'
 import Logo from '../../Logo'
-import CDate from '../../CDate';
 
 export default function SBFHomeInternals({name}) {
     
@@ -16,7 +16,7 @@ export default function SBFHomeInternals({name}) {
 
             <div className='d-flex justify-content-between mt-4 mb-2'>
                 <div className='d-flex col-8'>
-                    <b>Nombre del Cliente:</b>
+                    <b>Nombre del Asegurado:</b>
                     <span className="flex-fill">
                         <Input className="w-100 ms-1 text-center" maxlength="40" value={name}/>
                     </span>
@@ -70,7 +70,7 @@ export default function SBFHomeInternals({name}) {
             </p>
 
             <p className='lh-1'>
-                El honorario del <b>Broker es</b> <Input width="100px" maxlength="15" className='text-center'/>. El cliente está de acuerdo en pagar esta cuota y entiende que los honorarios <b>SON/NO SON reembolsables</b> (circule uno) independientemente de que la póliza sea cancelada o rechazada por el cliente o la aseguradora. El cliente
+                El honorario del <b>Broker es</b> <CurrencyFormat thousandSeparator={true} prefix={'$'} maxlength="10" style = {{width:"100px"}} className='fw-bold text-center input-default'/>. El cliente está de acuerdo en pagar esta cuota y entiende que los honorarios <b>SON/<span className='bf-radius'>NO SON</span> reembolsables</b> independientemente de que la póliza sea cancelada o rechazada por el cliente o la aseguradora. El cliente
                 autoriza al corredor mantener los pagos de las primas en cuentas de fideicomiso y recibir cualquier ingreso por intereses del de las mismas, hasta que sea pagado a la
                 compañía de seguros. Servicios adicionales: el corredor puede cobrarlos siguientes tarifas por los siguientes servicios por encima de la cuota.
             </p>
@@ -130,13 +130,16 @@ export default function SBFHomeInternals({name}) {
                 jurisdicción de la corte de reclamos pequeños bajo las reglas establecidas por ADR, de conformidad con el código civil de procedimientos de California, in derecho a apelación.
             </p>
             
-            <div className='d-flex justify-content-center text-center pt-4'>
-                <div className='border-top border-dark' style={{ width: "300px"}}>
-                    <p className='mb-0 fw-bold'>Firma del Agente</p>
+            <div className='d-flex justify-content-between mt-4 mx-5 pt-4 text-center fw-bold'>
+                <div className='border-top border-dark w-40'>
+                    <p className='mb-0'>Firma del Asegurado</p>
+                </div>
+                <div className='border-top border-dark w-40'>
+                    <p className='mb-0'>Firma del Agente</p>
                 </div>
             </div>
             
-            <p className='text-center mt-2 fw-bold lh-1'>
+            <p className='text-center mt-3 fw-bold lh-1'>
                 Si usted tiene cualquier pregunta o queja por favor comuníquese al nuestro teléfono gratuito de servicio al cliente al 1-888-290-4040. En cualquier caso de preguntas/problemas referente a la
                 cuota de corredor o seguro, contacte al Departamento de Seguros al 1-800-927-HELP.
             </p>

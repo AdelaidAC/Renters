@@ -299,7 +299,7 @@ export default function CCHomeInternals({name, address}) {
                             </span>
                         </div>
                         <div>
-                            Date of Authorization: <input type="date" className='text-center'/>
+                            Date of Authorization: <input type="date" className='text-center' style={{width: "90px"}}/>
                         </div>
                     </div>
 

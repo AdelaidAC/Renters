@@ -1,7 +1,7 @@
 import React from 'react'
+import CurrencyFormat from 'react-currency-format';
 import Input from '../../Input'
 import Logo from '../../Logo'
-import Signature from '../../Signature'
 
 export default function BFHomeInternals({name}) {
 
@@ -69,9 +69,9 @@ export default function BFHomeInternals({name}) {
                 insurance if premiums or fees remain unpaid to Broker.
             </p>
 
-            <p className='lh-2'>
-                CLIENT agrees to pay BROKER a broker fee for BROKER’S services. The <b>Broker Fee is</b> <Input width="100px" maxlength="15" className='text-center'/>. Client understands
-                this fee and understands that the broker fee <b>IS/IS NOT REFUNDABLE</b>, irrespective of whether the policy is cancelled or rejected by the Client or insurer. Client
+            <p className='lh-4'>
+                CLIENT agrees to pay BROKER a broker fee for BROKER’S services. The <b>Broker Fee is</b> <CurrencyFormat thousandSeparator={true} prefix={'$'} maxlength="10" style = {{width:"100px"}} className='fw-bold text-center input-default'/>. Client understands
+                this fee and understands that the broker fee <b>IS/<span className='bf-radius'>IS NOT</span> REFUNDABLE</b>, irrespective of whether the policy is cancelled or rejected by the Client or insurer. Client
                 authorizes Broker to maintain premium payments in interest-bearing trust accounts and to receive any interest income there from until paid to the insurance company.
                 Additional Services: Broker may charge the following fees for the following services in addition to the broker fee:
             </p>
@@ -138,9 +138,16 @@ export default function BFHomeInternals({name}) {
                 </div>
             </div>*/}
 
-            <Signature firstSignature="Named Insured Signature"/>
+            <div className='d-flex justify-content-between mt-4 mx-5 pt-4 text-center fw-bold'>
+                <div className='border-top border-dark w-40'>
+                    <p className='mb-0'>Named Insured Signature</p>
+                </div>
+                <div className='border-top border-dark w-40'>
+                    <p className='mb-0'>Broker's Signature</p>
+                </div>
+            </div>
             
-            <p className='text-center mt-2 fw-bold lh-2'>
+            <p className='text-center mt-3 fw-bold lh-2'>
                 If you have any questions or complaints please call our customer service toll free number at 1-888-290-4040. In any case of questions/problems concerning broker fees or insurance,
                 contact the Department of Insurance at 1-800-927-HELP.
             </p>
