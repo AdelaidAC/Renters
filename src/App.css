@@ -156,12 +156,19 @@ input[type="date"]{
 
 .bg-nav
 {
+  background-color: #062740;
+}
+
+.bg-nav2
+{
   background-color: #104268;
 }
 
 .bg-badge{
   background-color: #CE0018;
 }
+
+
 
 textarea {
   resize: none;

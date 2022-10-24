@@ -12,6 +12,7 @@ import Trucking from './components/TruckingInternals/Trucking';
 import Workers from './components/WorkersComp/Workers';
 import SpecialEvent from './components/SpecialEvent/SpecialEvent';
 import GarageLiabilityIS from './components/GarageLiability/GarageLiabilityIS';
+import Input from './components/Input';
 
 
 const Page = React.forwardRef((
@@ -54,7 +55,7 @@ const Page = React.forwardRef((
       
     </div>
   )
-})
+}) 
 
 const getPageMargins = () => {
   let marginTop = "0.4in"
@@ -300,105 +301,101 @@ function App() {
     <main className='letter'>
 
 
-    <nav className="mb-5 py-4 px-4 navbar text-white bg-nav">
-      <div class="container-fluid justify-content-between">
-
+    <nav className="mb-5 text-white">
+      <div class="d-flex justify-content-between text-center bg-nav p-3">
         <div>
           <label className="mx-1 fw-bold" for="nameI">Insured’s Name:</label>
-          <input id="nameI" type="text" autocomplete="off" maxlength="40" onChange={e => setNameI(e.target.value)}/> {console.log(nameInsured)}
+          <input className="text-center input-default" style={{width: "300px"}} id="nameI" type="text" autocomplete="off" maxlength="40" onChange={e => setNameI(e.target.value)}/> {console.log(nameInsured)}
         </div>
-
         <div>
           <label className="mx-1 fw-bold" for="initialsI">Initials:</label>
-          <input id="initialsI" type="text" autocomplete="off" maxlength="4" style={{width: "60px"}} onChange={e => setInitialsI(e.target.value)}/> {console.log(initialsInsured)}
+          <input className="text-center input-default" id="initialsI" type="text" autocomplete="off" maxlength="4" style={{width: "60px"}} onChange={e => setInitialsI(e.target.value)}/> {console.log(initialsInsured)}
         </div>
-
         <div>
           <label className="mx-1 fw-bold" for="addressI">Address:</label>
-          <input id="addressI" type="text" autocomplete="off" maxlength="80" onChange={e => setAddressI(e.target.value)}/> {console.log(addressInsured)}
+          <input className="text-center input-default" style={{width: "550px"}} id="addressI" type="text" autocomplete="off" maxlength="80" onChange={e => setAddressI(e.target.value)}/> {console.log(addressInsured)}
         </div>
-
         <div>
           <label className="mx-1 fw-bold" for="phoneI">Cell:</label>
-          <input id="phoneI" type="text" autocomplete="off" maxlength="16" placeholder="(000) 000-0000" style={{width: "150px"}} onChange={e => setPhoneI(e.target.value)}/> {console.log(phoneInsured)}
+          <input className="text-center input-default" style={{width: "130px"}} id="phoneI" type="text" autocomplete="off" maxlength="16" placeholder="(000) 000-0000" onChange={e => setPhoneI(e.target.value)}/> {console.log(phoneInsured)}
         </div>
-
-        <div class="d-flex align-items-center">
-          <label className="mx-1 fw-bold" for="doc">Document:</label> 
-          <select id="doc" className='form-select' value={document} onChange={handleRadioButton}>
-              <option value="selectDocument" default>Select a Document</option>
-              <option value="bond">Bond</option>
-              <option value="commercialAuto">Commercial Auto</option>
-              <option value="flood">Flood</option>
-              <option value="generalLiability">General Liability</option>
-              <option value="home">Home</option>
-              <option value="trucking">Trucking</option>
-              <option value="workersComp">Workers' Comp</option>
-              <option value="specialEvent">Special Event</option>
-              <option value="garageLiability">Garage Liability</option>
-          </select>
-        </div>
-
-        {generalLiabilityVisible &&
-          <div class="d-flex align-items-center">
-            <label className="ms-2 fw-bold" for="doc">Pages:</label>
-            <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesGL" onChange={handleGL}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesGL" onChange={handleGL}/> Credit Card
-            <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesGL" onChange={handleGL}/> Spanish BF
+      </div>
+      <div className='d-flex justify-content-center py-2 bg-nav2'>
+        <div>
+            <label className="mx-1 fw-bold" for="doc">Document:</label> 
+            <select id="doc" value={document} onChange={handleRadioButton} className="text-center">
+                <option value="selectDocument" default>Select a Document</option>
+                <option value="bond">Bond</option>
+                <option value="commercialAuto">Commercial Auto</option>
+                <option value="flood">Flood</option>
+                <option value="generalLiability">General Liability</option>
+                <option value="home">Home</option>
+                <option value="trucking">Trucking</option>
+                <option value="workersComp">Workers' Comp</option>
+                <option value="specialEvent">Special Event</option>
+                <option value="garageLiability">Garage Liability</option>
+            </select>
           </div>
-        }
 
-        {truckingVisible &&
-          <div class="d-flex align-items-center">
-            <label className="ms-2 fw-bold" for="doc">Pages:</label>
-            <input class="ms-2 me-1" type="checkbox" value="assignedRisk" name="pagesT" onChange={handleT}/> Assigned Risk
-            <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesT" onChange={handleT}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesT" onChange={handleT}/> Credit Card
-            <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesT" onChange={handleT}/> Spanish BF
-          </div>
-        }
+          {generalLiabilityVisible &&
+            <div class="d-flex align-items-center">
+              <label className="ms-2 fw-bold" for="doc">Pages:</label>
+              <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesGL" onChange={handleGL}/> Balance Due
+              <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesGL" onChange={handleGL}/> Credit Card
+              <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesGL" onChange={handleGL}/> Spanish BF
+            </div>
+          }
 
-        {workersCompVisible &&
-          <div class="d-flex align-items-center">
-            <label className="ms-2 fw-bold" for="doc">Pages:</label>
-            <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesWC" onChange={handleWC}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesWC" onChange={handleWC}/> Credit Card
-            <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesWC" onChange={handleWC}/> Spanish BF
-          </div>
-        }
+          {truckingVisible &&
+            <div class="d-flex align-items-center">
+              <label className="ms-2 fw-bold" for="doc">Pages:</label>
+              <input class="ms-2 me-1" type="checkbox" value="assignedRisk" name="pagesT" onChange={handleT}/> Assigned Risk
+              <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesT" onChange={handleT}/> Balance Due
+              <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesT" onChange={handleT}/> Credit Card
+              <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesT" onChange={handleT}/> Spanish BF
+            </div>
+          }
 
-        {homeVisible &&
-          <div class="d-flex align-items-center">
-            <label className="ms-2 fw-bold" for="doc">Pages:</label>
-            <input class="ms-2 me-1" type="checkbox" value="renters" name="pagesH" onChange={handleH}/> Renters
-            <input class="ms-2 me-1" type="checkbox" value="dp3" name="pagesH" onChange={handleH}/> DP3/HO3/Mobile
-            <input class="ms-2 me-1" type="checkbox" value="ho4" name="pagesH" onChange={handleH}/> HO4
-            <input class="ms-2 me-1" type="checkbox" value="ho6" name="pagesH" onChange={handleH}/> HO6
-            <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesH" onChange={handleH}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesH" onChange={handleH}/> Credit Card
-            <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesH" onChange={handleH}/> Spanish BF
-          </div>
-        }
+          {workersCompVisible &&
+            <div class="d-flex align-items-center">
+              <label className="ms-2 fw-bold" for="doc">Pages:</label>
+              <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesWC" onChange={handleWC}/> Balance Due
+              <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesWC" onChange={handleWC}/> Credit Card
+              <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesWC" onChange={handleWC}/> Spanish BF
+            </div>
+          }
 
-        {commercialAutoVisible &&
-          <div class="d-flex align-items-center">
-            <label className="ms-2 fw-bold" for="doc">Pages:</label>
-            <input class="ms-2 me-1" type="checkbox" value="infinity" name="pagesA" onChange={handleA}/> Infinity
-            <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesA" onChange={handleA}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesA" onChange={handleA}/> Credit Card
-            <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesA" onChange={handleA}/> Spanish BF
-          </div>
-        }
+          {homeVisible &&
+            <div class="d-flex align-items-center">
+              <label className="ms-2 fw-bold" for="doc">Pages:</label>
+              <input class="ms-2 me-1" type="checkbox" value="renters" name="pagesH" onChange={handleH}/> Renters
+              <input class="ms-2 me-1" type="checkbox" value="dp3" name="pagesH" onChange={handleH}/> DP3/HO3/Mobile
+              <input class="ms-2 me-1" type="checkbox" value="ho4" name="pagesH" onChange={handleH}/> HO4
+              <input class="ms-2 me-1" type="checkbox" value="ho6" name="pagesH" onChange={handleH}/> HO6
+              <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesH" onChange={handleH}/> Balance Due
+              <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesH" onChange={handleH}/> Credit Card
+              <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesH" onChange={handleH}/> Spanish BF
+            </div>
+          }
 
-        {bondVisible &&
-          <div class="d-flex align-items-center">
-            <label className="ms-2 fw-bold" for="doc">Pages:</label>
-            <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesB" onChange={handleB}/> Balance Due
-            <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesB" onChange={handleB}/> Credit Card Form
-            <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesB" onChange={handleB}/> Spanish BF
-          </div>
-        }
+          {commercialAutoVisible &&
+            <div class="d-flex align-items-center">
+              <label className="ms-2 fw-bold" for="doc">Pages:</label>
+              <input class="ms-2 me-1" type="checkbox" value="infinity" name="pagesA" onChange={handleA}/> Infinity
+              <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesA" onChange={handleA}/> Balance Due
+              <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesA" onChange={handleA}/> Credit Card
+              <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesA" onChange={handleA}/> Spanish BF
+            </div>
+          }
 
+          {bondVisible &&
+            <div class="d-flex align-items-center">
+              <label className="ms-2 fw-bold" for="doc">Pages:</label>
+              <input class="ms-2 me-1" type="checkbox" value="balanceDue" name="pagesB" onChange={handleB}/> Balance Due
+              <input class="ms-2 me-1" type="checkbox" value="creditCard" name="pagesB" onChange={handleB}/> Credit Card Form
+              <input class="ms-2 me-1" type="checkbox" value="spanishBF" name="pagesB" onChange={handleB}/> Spanish BF
+            </div>
+          }
       </div>
     </nav>
 
@@ -425,11 +422,14 @@ function App() {
         addressI = {addressInsured}
         phoneI = {phoneInsured}
         />
+
+        {document !== "selectDocument" &&
+          <ReactToPrint
+            content={() => componentRef.current}
+            trigger={() => <div className='d-flex justify-content-center my-5'><Button className='btn'>Download PDF</Button></div>}
+          />
+        }
       
-      <ReactToPrint
-        content={() => componentRef.current}
-        trigger={() => <div className='d-flex justify-content-center my-5'><Button className='btn'>Download PDF</Button></div>}
-      />
 
     </main>
   );
