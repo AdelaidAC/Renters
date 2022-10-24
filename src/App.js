@@ -12,12 +12,11 @@ import Trucking from './components/TruckingInternals/Trucking';
 import Workers from './components/WorkersComp/Workers';
 import SpecialEvent from './components/SpecialEvent/SpecialEvent';
 import GarageLiabilityIS from './components/GarageLiability/GarageLiabilityIS';
-import Input from './components/Input';
+import moment from 'moment';
 
 
 const Page = React.forwardRef((
   {
-    info, 
     bond, 
     commercialAuto, 
     flood, 
@@ -33,25 +32,25 @@ const Page = React.forwardRef((
     pageH, 
     pageA, 
     pageB, 
-    nameI, 
-    initialsI, 
+    nameI,
     addressI,
-    phoneI
+    phoneI,
+    dateI
   }, ref) => {
   return (
     <div ref={ref} className="container">
       
       <style>{getPageMargins()}</style>
 
-      {bond && <Bond pages={pageB} name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
-      {commercialAuto && <Auto pages={pageA} name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
-      {flood && <Flood name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
-      {generalLiability && <GeneralLiability pages={pageGL} name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
-      {home && <Home pages={pageH} name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
-      {trucking && <Trucking pages={pageT} name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
-      {workersComp && <Workers pages={pageWC} name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
-      {specialEvent && <SpecialEvent name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
-      {garageLiability && <GarageLiabilityIS name={nameI} initials={initialsI} address={addressI} phone={phoneI}/>}
+      {bond && <Bond pages={pageB} name={nameI} address={addressI} phone={phoneI} date={dateI}/>}
+      {commercialAuto && <Auto pages={pageA} name={nameI} address={addressI} phone={phoneI} date={dateI}/>}
+      {flood && <Flood name={nameI} address={addressI} phone={phoneI} date={dateI}/>}
+      {generalLiability && <GeneralLiability pages={pageGL} name={nameI} address={addressI} phone={phoneI} date={dateI}/>}
+      {home && <Home pages={pageH} name={nameI} address={addressI} phone={phoneI} date={dateI}/>}
+      {trucking && <Trucking pages={pageT} name={nameI} address={addressI} phone={phoneI} date={dateI}/>}
+      {workersComp && <Workers pages={pageWC} name={nameI} address={addressI} phone={phoneI} date={dateI}/>}
+      {specialEvent && <SpecialEvent name={nameI} address={addressI} phone={phoneI} date={dateI}/>}
+      {garageLiability && <GarageLiabilityIS name={nameI} address={addressI} phone={phoneI} date={dateI}/>}
       
     </div>
   )
@@ -80,7 +79,6 @@ function App() {
   const [workersCompVisible, setWorkersCompVisible] = useState(false);
   const [specialEventVisible, setSpecialEventVisible] = useState(false);
   const [garageLiabilityVisible, setGarageLiabilityVisible] = useState(false);
-  const [rentersVisible, setRentersVisible] = useState(false);
 
   const handleRadioButton = (e) => {
     setDocument(e.target.value);
@@ -121,9 +119,11 @@ function App() {
   const { pagesB } = pageBInfo;
 
   const [nameInsured, setNameI] = useState('');
-  const [initialsInsured, setInitialsI] = useState('');
   const [addressInsured, setAddressI] = useState('');
   const [phoneInsured, setPhoneI] = useState('');
+  const [dateInsured, setDateI] = useState('');
+
+  var dateFormat = moment(dateInsured).format('MM/DD/YYYY');
 
   const handleGL = (e) => {
     
@@ -279,13 +279,7 @@ function App() {
     document === "garageLiability" ? setGarageLiabilityVisible(true) : setGarageLiabilityVisible(false);
   }, [document])
 
-
-  const [info, setInfo] = useState({name: 'Adelaid Acevedo Cardona', date: '07/Sep/2022'})
   const [visible, setVisible] = useState(true)
-
-  const sendPrint = () => {
-    setVisible(false)
-  }
 
   useEffect(() => {
     if (!visible) {
@@ -305,19 +299,19 @@ function App() {
       <div class="d-flex justify-content-between text-center bg-nav p-3">
         <div>
           <label className="mx-1 fw-bold" for="nameI">Insured’s Name:</label>
-          <input className="text-center input-default" style={{width: "300px"}} id="nameI" type="text" autocomplete="off" maxlength="40" onChange={e => setNameI(e.target.value)}/> {console.log(nameInsured)}
-        </div>
-        <div>
-          <label className="mx-1 fw-bold" for="initialsI">Initials:</label>
-          <input className="text-center input-default" id="initialsI" type="text" autocomplete="off" maxlength="4" style={{width: "60px"}} onChange={e => setInitialsI(e.target.value)}/> {console.log(initialsInsured)}
+          <input className="text-center input-default" style={{width: "300px"}} id="nameI" type="text" autocomplete="off" maxlength="40" onChange={e => setNameI(e.target.value)}/>
         </div>
         <div>
           <label className="mx-1 fw-bold" for="addressI">Address:</label>
-          <input className="text-center input-default" style={{width: "550px"}} id="addressI" type="text" autocomplete="off" maxlength="80" onChange={e => setAddressI(e.target.value)}/> {console.log(addressInsured)}
+          <input className="text-center input-default" style={{width: "550px"}} id="addressI" type="text" autocomplete="off" maxlength="80" onChange={e => setAddressI(e.target.value)}/>
         </div>
         <div>
           <label className="mx-1 fw-bold" for="phoneI">Cell:</label>
-          <input className="text-center input-default" style={{width: "130px"}} id="phoneI" type="text" autocomplete="off" maxlength="16" placeholder="(000) 000-0000" onChange={e => setPhoneI(e.target.value)}/> {console.log(phoneInsured)}
+          <input className="text-center input-default" style={{width: "130px"}} id="phoneI" type="text" autocomplete="off" maxlength="16" placeholder="(000) 000-0000" onChange={e => setPhoneI(e.target.value)}/>
+        </div>
+        <div>
+          <label className="mx-1 fw-bold" for="dateI">Date:</label>
+          <input className="text-center" id="dateI" type="date" onChange={e => setDateI(e.target.value)}/> {console.log(dateInsured)}
         </div>
       </div>
       <div className='d-flex justify-content-center py-2 bg-nav2'>
@@ -400,7 +394,6 @@ function App() {
     </nav>
 
       <Page 
-        info = {info} 
         ref = {componentRef} 
         bond = {bondVisible} 
         commercialAuto = {commercialAutoVisible}
@@ -418,9 +411,9 @@ function App() {
         pageA = {pagesA}
         pageB = {pagesB}
         nameI = {nameInsured}
-        initialsI = {initialsInsured}
         addressI = {addressInsured}
         phoneI = {phoneInsured}
+        dateI = {dateFormat}
         />
 
         {document !== "selectDocument" &&

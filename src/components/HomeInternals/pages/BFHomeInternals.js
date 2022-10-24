@@ -3,7 +3,7 @@ import CurrencyFormat from 'react-currency-format';
 import Input from '../../Input'
 import Logo from '../../Logo'
 
-export default function BFHomeInternals({name}) {
+export default function BFHomeInternals({name, date}) {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -23,7 +23,7 @@ export default function BFHomeInternals({name}) {
                 </div>
                 <div>
                     <b>Date: </b>
-                    <input type="date" className='text-center'/>
+                    <Input value = {date} width = "80px" className = "text-center fw-bold"/>
                 </div>
             </div>
 

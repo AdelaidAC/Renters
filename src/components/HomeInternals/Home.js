@@ -8,10 +8,11 @@ import HO6 from "./pages/HO6";
 import ISHome from "./pages/ISHome";
 import PAHomeInternals from "./pages/PAHomeInternals";
 import PNHomeInternals from "./pages/PNHomeInternals";
+import Prueba from "./pages/prueba";
 import RentersIS from "./pages/RentersIS";
 import SBFHomeInternals from "./pages/SBFHomeInternals";
 
-export default function Home({pages, name, initials, address, phone}) {
+export default function Home({pages, name, address, phone, date}) {
 
     let brokerFee, balanceDue, creditCard, dP3, hO4, hO6, renters, promiseA;
     let count = 0;
@@ -26,28 +27,28 @@ export default function Home({pages, name, initials, address, phone}) {
 
     if (Object.values(pages).includes("dp3")) {
         count++;
-        dP3 = <><Badge text={count}/><DP3HO3Mobile name={name} initials={initials}/></>;
+        dP3 = <><Badge text={count}/><DP3HO3Mobile name={name} date={date}/></>;
     }
 
     if (Object.values(pages).includes("ho4")) {
         count++;
-        hO4 = <><Badge text={count}/><HO4 name={name} initials={initials}/></>;
+        hO4 = <><Badge text={count}/><HO4 name={name} date={date}/></>;
     }
 
     if (Object.values(pages).includes("ho6")) {
         count++;
-        hO6 = <><Badge text={count}/><HO6 name={name} initials={initials}/></>;
+        hO6 = <><Badge text={count}/><HO6 name={name} date={date}/></>;
     }
     
     count++;
-    promiseA = <><Badge text={count}/><PAHomeInternals name={name}/></>;
+    promiseA = <><Badge text={count}/><PAHomeInternals name={name} date={date}/></>;
 
     if (Object.values(pages).includes("spanishBF")) {
         count++;
-        brokerFee = <><Badge text={count}/><SBFHomeInternals name={name}/></>;
+        brokerFee = <><Badge text={count}/><SBFHomeInternals name={name} date={date}/></>;
     } else {
         count++;
-        brokerFee = <><Badge text={count}/><BFHomeInternals name={name}/></>;
+        brokerFee = <><Badge text={count}/><BFHomeInternals name={name} date={date}/></>;
     }
 
     if (Object.values(pages).includes("balanceDue")) {
@@ -66,7 +67,7 @@ export default function Home({pages, name, initials, address, phone}) {
 
     return (
         <div>
-            
+
             {renters}
 
             {dP3}
@@ -78,6 +79,8 @@ export default function Home({pages, name, initials, address, phone}) {
             {brokerFee}
             {balanceDue}
             {creditCard}
+
+            <Prueba/>
             
         </div>
     );

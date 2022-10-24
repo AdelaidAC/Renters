@@ -25,6 +25,7 @@
     "react-scripts": "5.0.1",
     "react-to-print": "^2.14.7",
     "stream-browserify": "^3.0.0",
+    "to-words": "^3.3.0",
     "util": "^0.12.4",
     "web-vitals": "^2.1.2"
   },

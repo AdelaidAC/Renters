@@ -4,7 +4,7 @@ import Input from "../../Input";
 import Logo from "../../Logo";
 import Title from "../../Title";
 
-export default function HO4({name, initials}) {
+export default function HO4({name, date}) {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -119,7 +119,7 @@ export default function HO4({name, initials}) {
             <p className="mx-0 mb-0 mt-3">
                 I <Input className="text-center" width="400px" value={name}/>hereby appoint Adriana's Insurance Services Inc. as my Broker / Attorney in fact
                 to sign papers, applications, documents that are necessary in order to secure the insurance coverage specified below. I have
-                also been advised of the importance of the effective date of the policy and have chosen to have coverage start on: <input type="date" className='text-center' style={{width: "100px"}}/>
+                also been advised of the importance of the effective date of the policy and have chosen to have coverage start on: <Input value = {date} width = "80px" className = "text-center fw-bold"/>
             </p>
 
             <table className="fw-bold my-3">
@@ -152,7 +152,7 @@ export default function HO4({name, initials}) {
                     </td>
                     <td><input type="checkbox" checked={chkCYes}/></td>
                     <td><input type="checkbox" checked={chkCNo}/></td>
-                    <td>Initials <Input value={initials} width="60px" className="text-center"/></td>
+                    <td>Initials <Input disabled width="60px"/></td>
                 </tr>
                 <tr>
                     <td>D. Loss of Use</td>
@@ -171,7 +171,7 @@ export default function HO4({name, initials}) {
                     </td>
                     <td><input type="checkbox" checked={chkDYes}/></td>
                     <td><input type="checkbox" checked={chkDNo}/></td>
-                    <td>Initials <Input value={initials} width="60px" className="text-center"/></td>
+                    <td>Initials <Input disabled width="60px"/></td>
                 </tr>
                 <tr>
                     <td>E. Personal Liability</td>
@@ -190,7 +190,7 @@ export default function HO4({name, initials}) {
                     </td>
                     <td><input type="checkbox" checked={chkEYes}/></td>
                     <td><input type="checkbox" checked={chkENo}/></td>
-                    <td>Initials <Input value={initials} width="60px" className="text-center"/></td>
+                    <td>Initials <Input disabled width="60px"/></td>
                 </tr>
                 <tr>
                     <td rowspan="2" className='text-center'>
@@ -216,7 +216,7 @@ export default function HO4({name, initials}) {
                     </td>
                     <td><input type="checkbox" checked={chkFYes}/></td>
                     <td><input type="checkbox" checked={chkFNo}/></td>
-                    <td>Initials <Input value={initials} width="60px" className="text-center"/></td>
+                    <td>Initials <Input disabled width="60px"/></td>
                 </tr>
                 <tr>
                     <td>Deductible</td>
@@ -232,7 +232,7 @@ export default function HO4({name, initials}) {
                         />
                     </td>
                     <td colspan="2"></td>
-                    <td>Initials <Input value={initials} width="60px" className="text-center"/></td>
+                    <td>Initials <Input disabled width="60px"/></td>
                 </tr>
             </table>
     
@@ -419,7 +419,7 @@ export default function HO4({name, initials}) {
                     Named Insured Signature: <Input width="300px" disabled/>
                 </div>
                 <div>
-                    Date: <input className='text-center' type="date" style={{width: "100px"}}/>
+                    Date: <Input value = {date} width = "80px" className = "text-center fw-bold"/>
                 </div>
             </div>
             

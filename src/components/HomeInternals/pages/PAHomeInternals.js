@@ -18,15 +18,15 @@ const agreementValues = [
     "Other"
 ]
 
-export default function PAHomeInternals({name}) {
+export default function PAHomeInternals({name, date}) {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    const [startDate, setStartDate] = useState('');
+    {/*const [startDate, setStartDate] = useState('');*/}
 
-    var endDate = moment(startDate).add(7, 'days').format('MM/DD/YYYY');
+    var endDate = moment(date).add(7, 'days').format('MM/DD/YYYY');
 
     return (
         
@@ -45,7 +45,7 @@ export default function PAHomeInternals({name}) {
                 </div>
                 <div>
                     <b>Date: </b>
-                    <input type='date' style={{width: "100px"}} className='text-center fw-bold' onChange = {e => setStartDate(e.target.value)}/>
+                    <Input value = {date} width = "80px" className = "text-center fw-bold"/>
                 </div>
             </div>
 
@@ -54,7 +54,7 @@ export default function PAHomeInternals({name}) {
             </p>*/}
 
             <p className='font-11 my-4'>
-                It is my stated intention to obtain insurance coverage effective <Input value = {endDate} width = "80px" className = "text-center fw-bold"/>, however I do not have copies of the following information with me:
+                It is my stated intention to obtain insurance coverage effective <Input value = {date} width = "80px" className = "text-center fw-bold"/>, however I do not have copies of the following information with me:
             </p>
             
             
