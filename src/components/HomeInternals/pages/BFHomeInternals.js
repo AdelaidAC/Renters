@@ -71,7 +71,7 @@ export default function BFHomeInternals({name, date}) {
 
             <p className='lh-4'>
                 CLIENT agrees to pay BROKER a broker fee for BROKER’S services. The <b>Broker Fee is</b> <CurrencyFormat thousandSeparator={true} prefix={'$'} maxlength="10" style = {{width:"100px"}} className='fw-bold text-center input-default'/>. Client understands
-                this fee and understands that the broker fee <b>IS/<span className='bf-radius'>IS NOT</span> REFUNDABLE</b>, irrespective of whether the policy is cancelled or rejected by the Client or insurer. Client
+                this fee and understands that the broker fee <b>IS / <span className='bf-radius'>IS NOT REFUNDABLE</span></b>, irrespective of whether the policy is cancelled or rejected by the Client or insurer. Client
                 authorizes Broker to maintain premium payments in interest-bearing trust accounts and to receive any interest income there from until paid to the insurance company.
                 Additional Services: Broker may charge the following fees for the following services in addition to the broker fee:
             </p>

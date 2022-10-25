@@ -52,9 +52,9 @@ export default function PNHomeInternals({name, address, phone}) {
             <Logo />
 
 
-            <p className='text-center fw-bold font-16 mt-2 mb-0'>PROMISSORY NOTE</p>
+            <p className='text-center fw-bold font-16 my-3'>PROMISSORY NOTE</p>
 
-            <p className='lh-3'>
+            <p className='lh-4'>
                 Pursuant to U.C.C. Article 3, §§104-311, the following Note is a negotiable instrument, which legally binds you, the Maker, to legal
                 performance of the terms therein. Consequently, because this instrument carries the full force and effect of a negotiable instrument,
                 it grants certain rights and powers to the Holder of the Note. Any person who executes this instrument with the intent to dishonor it
@@ -91,7 +91,7 @@ export default function PNHomeInternals({name, address, phone}) {
                 payable with <i>interest from the date of this note,</i> at the rate of 18% per annum, along with an added late charge of <u>Twenty dollars ($20.00).</u>
             </div>
             
-            <div className='d-flex justify-content-between mt-5 mx-5 pt-5 text-center fw-bold'>
+            <div className='d-flex justify-content-between mt-5 mx-5 mb-3 pt-5 text-center fw-bold'>
                 <div className='border-top border-dark w-40'>
                     <p className='mb-0'>Signature</p>
                 </div>
@@ -102,7 +102,7 @@ export default function PNHomeInternals({name, address, phone}) {
             
             <Subtitle text="POWER TO CANCEL INSURANCE FOR NON-PAYMENT"/>
             
-            <p className='lh-3'>
+            <p className='lh-4'>
                 <Input disabled width="60px"/>
                 <b className="me-3 ms-1">Initials</b>
                 I understand and agree that, if this Promissory Note to Adriana’s is not paid as agreed, I hereby grant Adriana’s the
@@ -114,7 +114,7 @@ export default function PNHomeInternals({name, address, phone}) {
 
             <Subtitle text="PROMISSORY NOTE GUARANTEE"/>
             
-            <p className='lh-3'>
+            <p className='lh-4'>
                 <Input disabled width="60px"/>
                 <b className="me-3 ms-1">Initials</b>
                 By initialing this Promissory Note GUARANTEE and signing the Promissory Note above, I understand and
@@ -122,7 +122,7 @@ export default function PNHomeInternals({name, address, phone}) {
                 payment below to Adriana’s (including its successors and assigns). If I should dishonor this Promissory Note:
             </p>
 
-            <p className='lh-3'>
+            <p className='lh-4'>
                 <b>1.</b> I may be sent to a Collection Agency, without further notice of calls, for the total amount of this Promissory Note,
                 interest, late fees, and any other fees or penalties;
                 <br />
@@ -134,7 +134,7 @@ export default function PNHomeInternals({name, address, phone}) {
             </p>
             
 
-            <p className='text-center fst-italic font-12 fw-bold'>I hereby agree and acknowledge that my initials against the clauses above are endorsed by my handwritten
+            <p className='text-center fst-italic fw-bold'>I hereby agree and acknowledge that my initials against the clauses above are endorsed by my handwritten
             statement and signature below.</p>
 
             <div className='d-flex justify-content-between mt-2 mx-5 text-center'>
@@ -162,11 +162,11 @@ export default function PNHomeInternals({name, address, phone}) {
                     <p className='fw-bold'>Cell Phone Number</p>
                 </div>
                 <div>
-                    <Input width = "150px" maxlength="15" className='text-center'/>
+                    <CurrencyFormat format="+1 (###) ###-####" mask="_" className='text-center input-default' style={{width: "150px"}}/>
                     <p className='fw-bold'>Home Phone Number</p>
                 </div>
                 <div>
-                    <Input width = "150px" maxlength="15" className='text-center'/>
+                    <CurrencyFormat format="+1 (###) ###-####" mask="_" className='text-center input-default' style={{width: "150px"}}/>
                     <p className='fw-bold'>Work Phone Number</p>
                 </div>
                 <div>

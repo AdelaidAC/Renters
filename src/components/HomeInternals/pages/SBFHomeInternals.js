@@ -70,7 +70,7 @@ export default function SBFHomeInternals({name, date}) {
             </p>
 
             <p className='lh-1'>
-                El honorario del <b>Broker es</b> <CurrencyFormat thousandSeparator={true} prefix={'$'} maxlength="10" style = {{width:"100px"}} className='fw-bold text-center input-default'/>. El cliente está de acuerdo en pagar esta cuota y entiende que los honorarios <b>SON/<span className='bf-radius'>NO SON</span> reembolsables</b> independientemente de que la póliza sea cancelada o rechazada por el cliente o la aseguradora. El cliente
+                El honorario del <b>Broker es</b> <CurrencyFormat thousandSeparator={true} prefix={'$'} maxlength="10" style = {{width:"100px"}} className='fw-bold text-center input-default'/>. El cliente está de acuerdo en pagar esta cuota y entiende que los honorarios <b>SON / <span className='bf-radius'>NO SON REEMBOLSABLES</span></b> independientemente de que la póliza sea cancelada o rechazada por el cliente o la aseguradora. El cliente
                 autoriza al corredor mantener los pagos de las primas en cuentas de fideicomiso y recibir cualquier ingreso por intereses del de las mismas, hasta que sea pagado a la
                 compañía de seguros. Servicios adicionales: el corredor puede cobrarlos siguientes tarifas por los siguientes servicios por encima de la cuota.
             </p>

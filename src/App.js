@@ -12,6 +12,7 @@ import Trucking from './components/TruckingInternals/Trucking';
 import Workers from './components/WorkersComp/Workers';
 import SpecialEvent from './components/SpecialEvent/SpecialEvent';
 import GarageLiabilityIS from './components/GarageLiability/GarageLiabilityIS';
+import CurrencyFormat from 'react-currency-format';
 import moment from 'moment';
 
 
@@ -307,7 +308,7 @@ function App() {
         </div>
         <div>
           <label className="mx-1 fw-bold" for="phoneI">Cell:</label>
-          <input className="text-center input-default" style={{width: "130px"}} id="phoneI" type="text" autocomplete="off" maxlength="16" placeholder="(000) 000-0000" onChange={e => setPhoneI(e.target.value)}/>
+          <CurrencyFormat format="+1 (###) ###-####" mask="_" className="text-center input-default" placeholder='+1 (###) ###-####' style={{width: "130px"}} id="phoneI" onChange={e => setPhoneI(e.target.value)}/>
         </div>
         <div>
           <label className="mx-1 fw-bold" for="dateI">Date:</label>
