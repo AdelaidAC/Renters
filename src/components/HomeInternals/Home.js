@@ -80,7 +80,7 @@ export default function Home({pages, name, address, phone, date}) {
             {balanceDue}
             {creditCard}
 
-            <Prueba/>
+            
             
         </div>
     );

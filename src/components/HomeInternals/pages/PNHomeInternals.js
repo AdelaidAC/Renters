@@ -1,14 +1,50 @@
-import React from 'react'
-import CDate from '../../CDate'
+import React, { useEffect, useState} from 'react';
 import Input from '../../Input'
 import Logo from '../../Logo'
 import Subtitle from '../../Subtitle'
+import { ToWords } from 'to-words';
+import CurrencyFormat from 'react-currency-format';
 
 export default function PNHomeInternals({name, address, phone}) {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const toWords = new ToWords({
+        localeCode: 'en-US',
+        converterOptions: {
+          currency: false,
+          ignoreDecimal: false,
+          ignoreZeroCurrency: false,
+          doNotAddOnly: false,
+          doNotAddOnly: true,
+          currencyOptions: { // can be used to override defaults for the selected locale
+            name: 'Dollar',
+            plural: 'Dollars',
+            symbol: '$',
+            fractionalUnit: {
+              name: 'Cent',
+              plural: 'Cents',
+              symbol: '¢',
+            },
+          }
+        }
+      });
+
+      const [iCurrency, setCurrency] = useState('');
+
+      let rCurrency, words = "";
+
+      if(iCurrency.length !== 0)
+      {
+        rCurrency = iCurrency.replace('$','').replaceAll(',','');
+        words = toWords.convert(rCurrency, { currency: true });
+      }
+      else
+      {
+        words = toWords.convert(0, { currency: true });
+      }
 
     return (
         <div className='sheet font-11 text-justify'>
@@ -39,7 +75,14 @@ export default function PNHomeInternals({name, address, phone}) {
             </div>
 
             <div className='d-flex p-0'>
-                <span className='me-1'>the sum of</span> <span className="flex-fill"><Input className="w-100 text-center" maxlength="50"/></span>(<Input width = "150px" maxlength="15" className='text-center'/>), <i>without interest,</i>
+                <span className='me-1'>the sum of</span> <span className="flex-fill"><Input className="w-100 text-center" maxlength="50" value={words}/></span>(<CurrencyFormat 
+                    thousandSeparator={true}
+                    prefix={'$'} 
+                    maxlength="13"
+                    style = {{width:"90px"}}
+                    className='fw-bold text-center input-default'
+                    onChange = {e => setCurrency(e.target.value)}
+                />), <i>without interest,</i>
             </div>
 
             <div className='p-0'>
@@ -48,15 +91,20 @@ export default function PNHomeInternals({name, address, phone}) {
                 payable with <i>interest from the date of this note,</i> at the rate of 18% per annum, along with an added late charge of <u>Twenty dollars ($20.00).</u>
             </div>
             
-            <div className='d-flex justify-content-center text-center pt-5 pb-3'>
-                <div className='border-top border-dark' style={{ width: "300px"}}>
-                    <p className='mb-0 fw-bold'>Witness</p>
+            <div className='d-flex justify-content-between mt-5 mx-5 pt-5 text-center fw-bold'>
+                <div className='border-top border-dark w-40'>
+                    <p className='mb-0'>Signature</p>
+                </div>
+                <div className='border-top border-dark w-40'>
+                    <p className='mb-0'>Witness</p>
                 </div>
             </div>
             
             <Subtitle text="POWER TO CANCEL INSURANCE FOR NON-PAYMENT"/>
             
             <p className='lh-3'>
+                <Input disabled width="60px"/>
+                <b className="me-3 ms-1">Initials</b>
                 I understand and agree that, if this Promissory Note to Adriana’s is not paid as agreed, I hereby grant Adriana’s the
                 power to request cancellation of my policy(ies) applied for through the California Automobile Assigned Risk Plan or
                 any other Company. I also understand that I shall be liable for any allowed charges, earned premiums, fully earned
@@ -67,6 +115,8 @@ export default function PNHomeInternals({name, address, phone}) {
             <Subtitle text="PROMISSORY NOTE GUARANTEE"/>
             
             <p className='lh-3'>
+                <Input disabled width="60px"/>
+                <b className="me-3 ms-1">Initials</b>
                 By initialing this Promissory Note GUARANTEE and signing the Promissory Note above, I understand and
                 acknowledge that I am legally bound, under the California Civil Code and the Uniform Commercial Code to make the
                 payment below to Adriana’s (including its successors and assigns). If I should dishonor this Promissory Note:
@@ -91,6 +141,10 @@ export default function PNHomeInternals({name, address, phone}) {
                 <div>
                     <Input width="260px" value={name} className='text-center'/>
                     <p className='mb-0 fw-bold'>Insured’s Name</p>
+                </div>
+                <div>
+                    <Input width="260px" disabled/>
+                    <p className='mb-0 fw-bold'>Insured’s Signature</p>
                 </div>
                 <div>
                     <input className='text-center' type="date"/>
