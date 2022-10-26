@@ -88,7 +88,7 @@ export default function PNHomeInternals({name, address, phone}) {
             <div className='p-0'>
                 <i>by no later than, </i><input type="date" className='text-center'/>. In the event that my payment of the full amount of this note is not
                 received by the aforementioned due date, the entire balance of principal then remaining unpaid, shall immediately become due and
-                payable with <i>interest from the date of this note,</i> at the rate of 18% per annum, along with an added late charge of <u>Twenty dollars ($20.00).</u>
+                payable with <i>interest from the date of this note,</i> at the rate of 18% per annum, along with an added late charge of <u>Thirty dollars ($30.00).</u>
             </div>
             
             <div className='d-flex justify-content-between mt-5 mx-5 mb-3 pt-5 text-center fw-bold'>
