@@ -10,11 +10,11 @@ export default function BFHomeInternals({name, date}) {
     }, []);
       
     return (
-        <div className='sheet font-9 text-justify'>
+        <div className='sheet font-9 text-justify lh-2'>
             
             <Logo />
 
-            <div className='d-flex justify-content-between my-4'>
+            <div className='d-flex justify-content-between mt-2 mb-2'>
                 <div className='d-flex col-8'>
                     <b>Named Insured:</b>
                     <span className="flex-fill">
@@ -27,11 +27,11 @@ export default function BFHomeInternals({name, date}) {
                 </div>
             </div>
 
-            <p className='text-center fw-bold font-14 mt-2 mb-0'>STANDARD BROKER FEE DISCLOSURE</p>
+            <p className='text-center fw-bold font-12 mb-0'>STANDARD BROKER FEE DISCLOSURE</p>
 
             <p className='text-center fw-bold mb-2'>This disclosure was prepared by California Insurance Commissioner: READ IT CAREFULLY!</p>
             
-            <p className='lh-2 mb-0'>
+            <p className='mb-0'>
                 <b>I. </b>Do not sign any broker fee agreement unless all of its blank lines and spaces have been filled-in and you have read the entire document and the agreement carefully.
                 <br />
                 <b>II. </b>Your insurance broker represents you, the consumer, and is entitled to charge a broker fee if he/she chooses. This fee is not set by law, and may be negotiable
@@ -58,27 +58,28 @@ export default function BFHomeInternals({name, date}) {
                 Insurance. By signing this disclosure, you acknowledge receipt of the appropriate pamphlet(s).
             </p>
 
-            <p className='text-center fw-bold font-12 my-1'>Appointment of Insurance Broker and Agreement to Pay Broker Fee</p>
+            <p className='text-center fw-bold font-10 my-1'>Appointment of Insurance Broker and Agreement to Pay Broker Fee</p>
 
-            <p className='lh-2'>
+            <p>
                 As of today, the undersigned ("Client") appoints Adriana's Insurance Service, Inc. ("Broker") as his/her insurance broker of record. This Agreement shall continue in
                 full force until terminated by either party. Broker agrees to represent Client honestly and competently in obtaining and servicing the desired insurance coverage, as
                 may be available, and Client agrees to act in good faith with Broker and provide Broker with full disclosure of all information and documentation necessary to allow
                 Broker to procure an insurance policy. Client agrees to pay a broker fee for Broker's services. The broker fee is in addition to: (i) any commissions, contingent
                 commissions, or bonuses, which may be paid to Broker by the insurance company; and (ii) the Additional Services, listed below. Client authorizes Broker to cancel
                 insurance if premiums or fees remain unpaid to Broker.
-            </p>
-
-            <p className='lh-4'>
+                <br/>
+                <br/>
                 CLIENT agrees to pay BROKER a broker fee for BROKER’S services. The <b>Broker Fee is</b> <CurrencyFormat thousandSeparator={true} prefix={'$'} maxlength="10" style = {{width:"100px"}} className='fw-bold text-center input-default'/>. Client understands
                 this fee and understands that the broker fee <b>IS / <span className='bf-radius'>IS NOT REFUNDABLE</span></b>, irrespective of whether the policy is cancelled or rejected by the Client or insurer. Client
                 authorizes Broker to maintain premium payments in interest-bearing trust accounts and to receive any interest income there from until paid to the insurance company.
                 Additional Services: Broker may charge the following fees for the following services in addition to the broker fee:
             </p>
 
-            <table className='table table-fit'>
+            <table className='table table-fit text-center'>
                 <tbody>
-                    <tr className="text-decoration-underline fw-bold">
+                    <tr className="text-decoration-underline fw-bold tr-h">
+                        <td>Services:</td>
+                        <td>Fees:</td>
                         <td>Services:</td>
                         <td>Fees:</td>
                         <td>Services:</td>
@@ -86,34 +87,156 @@ export default function BFHomeInternals({name, date}) {
                         <td>Services:</td>
                         <td>Fees:</td>
                     </tr>
-                    <tr>
-                        <td><b>Endorsements:</b></td>
-                        <td>From $300</td>
-                        <td><b>Agency Renewal:</b></td>
-                        <td>Up to 100% of original broker fee</td>
-                        <td><b>MVR:</b></td>
-                        <td>$10.00 per MVR</td>
+                    <tr className="tr-h">
+                        <td>
+                            <b>Endorsment:</b>
+                        </td>
+                        <td>
+                            Up to $300 
+                            <br/>
+                            per transaction
+                        </td>
+                        <td>
+                            <b>Monthly Payments:</b>
+                        </td>
+                        <td>
+                            $15.00
+                        </td>
+                        <td>
+                            <b>Reinstatement Fee/Late 
+                            <br/>
+                            Payment Fee:</b>
+                        </td>
+                        <td>
+                            Up to 
+                            <br/>
+                            $50.00
+                        </td>
+                        <td>
+                            <b>Registration 
+                            <br/>    
+                            Renewal Fee:</b>
+                        </td>
+                        <td>
+                            $48.00 
+                            <br/>
+                            per vehicle
+                        </td>
                     </tr>
-                    <tr>
-                        <td><b>Promotional Services:</b></td>
-                        <td>$25.00</td>
-                        <td><b>Vehicle Registration:</b></td>
-                        <td>$10.00 per copy</td>
-                        <td><b>Payments:</b></td>
-                        <td>$15.00</td>
+                    <tr className="tr-h">
+                        <td>
+                            <b>DocuSign:</b>
+                        </td>
+                        <td>
+                            $10.00 per 
+                            <br/>
+                            Transaction
+                        </td>
+                        <td>
+                            <b>Credit Card Service 
+                            <br/>
+                            Fee:</b>
+                        </td>
+                        <td>
+                            $1.00
+                        </td>
+                        <td>
+                            <b>DMV Transfer Title:</b>
+                        </td>
+                        <td>
+                            $148.00
+                        </td>
+                        <td>
+                            <b>DMV Removed 
+                            <br/>
+                            Suspension:</b>
+                        </td>
+                        <td>
+                            Service Fee 
+                            <br/>
+                            $15.71
+                        </td>
                     </tr>
-                    <tr>
-                        <td><b>Non-Sufficient Funds on Credit Card/Check:</b></td>
-                        <td>$35.00</td>
-                        <td><b>Registration Renewal:</b></td>
-                        <td>$25.00</td>
-                        <td><b>Late Payment Fee:</b></td>
-                        <td>Up to $50.00</td>
+                    <tr className="tr-h">
+                        <td>
+                            <b>MVR:</b>
+                        </td>
+                        <td>
+                            $10.00 per driver
+                            <br/>
+                            by transaction
+                        </td>
+                        <td>
+                            <b>Agency Renewal:</b>
+                        </td>
+                        <td>
+                            Up to 100% of 
+                            <br/>
+                            Original BrokerFee
+                        </td>
+                        <td>
+                            <b>Non-Sufficient Funds on 
+                            <br/>    
+                            Credit Card/Check/Chargeback:</b>
+                        </td>
+                        <td>
+                            $35.00
+                        </td>
+                        <td>
+                            <b>Promo Registration 
+                            <br/>
+                            Renewal Fee:</b>
+                        </td>
+                        <td>
+                            $8.50 P.F.
+                            <br/>
+                            Reg. per vehicle
+                        </td>
+                    </tr>
+                    <tr className="tr-h">
+                        <td>
+                            <b>BF MK:</b>
+                        </td>
+                        <td>
+                            $10.00 per Transaction
+                            <br/>
+                            NB or Endo
+                        </td>
+                        <td>
+                            <b>Late Fee on 
+                            <br/>    
+                            Balance/Invoice:</b>
+                        </td>
+                        <td>
+                            Up to 
+                            <br/>
+                            $30.00
+                        </td>
+                        <td>
+                            <b>DMV
+                            <br/>
+                            Vehicle Verification:</b>
+                        </td>
+                        <td>
+                            Up to $10.00
+                            <br/>
+                            per Vehicle
+                        </td>
+                        <td>
+                            <b>Promo 
+                            <br/>
+                            Title Change:</b>
+                        </td>
+                        <td>
+                            $74.00 
+                            <br/>
+                            per vehicle
+                        </td>
                     </tr>
                 </tbody>
             </table>
 
-            <p className='lh-2 mb-1'>
+            <p className='mb-1'>
                 <b>PREMIUM PAYMENTS: </b> 
                 Broker may, at its sole option, accept premium installment payments and transmit the payments to the insurer for an additional fee of
                 $15.00 for each payment received. Payments must be received by Broker not less than two (2) business days prior to the installment due date. Broker shall not be
@@ -121,9 +244,9 @@ export default function BFHomeInternals({name, date}) {
                 amount of the premium payment.
             </p>
 
-            <p className='text-center fw-bold font-12 my-1'>CANCELLATION AND OTHER MISCELLANEOUS PROVISIONS</p>
+            <p className='text-center fw-bold font-10 my-1'>CANCELLATION AND OTHER MISCELLANEOUS PROVISIONS</p>
             
-            <p className='lh-2'>
+            <p>
                 Broker will only honor cancellation requests made in writing and signed by the Client. Broker may provide client with insurance identification cards upon completion
                 of the applications process. Client acknowledges and understands that insurance coverage is not provided until the application is underwritten and accepted by the
                 insurance company. Accordingly, the identification cards cannot be used as proof of the insurance by the Client until the insurance company has bound and issued
@@ -147,7 +270,7 @@ export default function BFHomeInternals({name, date}) {
                 </div>
             </div>
             
-            <p className='text-center mt-3 fw-bold lh-2'>
+            <p className='text-center mt-3 fw-bold'>
                 If you have any questions or complaints please call our customer service toll free number at 1-888-290-4040. In any case of questions/problems concerning broker fees or insurance,
                 contact the Department of Insurance at 1-800-927-HELP.
             </p>

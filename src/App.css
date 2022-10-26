@@ -190,6 +190,13 @@ textarea {
 
 .bf-radius {
   border: 1px solid black;
-  padding: 2px;
+  padding: 0.5px 3px 0.5px 3px;
   border-radius: 75px;
+}
+
+
+.tr-h {
+  line-height: 14px;
+  min-height: 14px;
+  height: 14px;
 }
