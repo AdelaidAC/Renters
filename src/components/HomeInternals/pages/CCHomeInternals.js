@@ -239,7 +239,7 @@ export default function CCHomeInternals({name}) {
                     </div>
                 </div>
 
-                <div className="row justify-content-center text-center fw-bold">
+                <div className="row justify-content-center text-center fw-bold pb-2">
                     <div className="col-2">
                         <p className='mb-0'>Street</p>
                     </div>
