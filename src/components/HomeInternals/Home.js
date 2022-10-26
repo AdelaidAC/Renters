@@ -58,7 +58,7 @@ export default function Home({pages, name, address, phone, date}) {
 
     if (Object.values(pages).includes("creditCard")) {
         count++;
-        creditCard = <><Badge text={count}/><CCHomeInternals name={name} address={address}/></>;
+        creditCard = <><Badge text={count}/><CCHomeInternals name={name}/></>;
     }
 
     React.useEffect(() => {

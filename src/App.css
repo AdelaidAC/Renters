@@ -24,7 +24,7 @@ main {
 .input-default {
   border: none;
   border-bottom: 1px solid black;
-  background-color: rgba(0,0,0,0.1);
+  background-color: white;
 }
 .stretch {
   flex-basis: auto;
