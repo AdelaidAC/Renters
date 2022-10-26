@@ -10,15 +10,15 @@ export default function BFHomeInternals({name, date}) {
     }, []);
       
     return (
-        <div className='sheet font-9 text-justify lh-2'>
+        <div className='sheet font-9 text-justify lh-3'>
             
             <Logo />
 
-            <div className='d-flex justify-content-between mt-2 mb-2'>
+            <div className='d-flex justify-content-between my-3'>
                 <div className='d-flex col-8'>
                     <b>Named Insured:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1 text-center" maxlength="40" value={name}/>
+                        <Input className="w-100 ms-1 text-center fw-bold" value={name}/>
                     </span>
                 </div>
                 <div>
@@ -57,6 +57,10 @@ export default function BFHomeInternals({name, date}) {
                 Insurance. If your broker is placing residential coverage, your broker must provide you with a copy of the current Department of Insurance pamphlet Residential
                 Insurance. By signing this disclosure, you acknowledge receipt of the appropriate pamphlet(s).
             </p>
+            <br/>
+            <p className='m-0'>
+                Client Initials: <Input disabled width="60px"/>
+            </p>
 
             <p className='text-center fw-bold font-10 my-1'>Appointment of Insurance Broker and Agreement to Pay Broker Fee</p>
 
@@ -69,7 +73,7 @@ export default function BFHomeInternals({name, date}) {
                 insurance if premiums or fees remain unpaid to Broker.
                 <br/>
                 <br/>
-                CLIENT agrees to pay BROKER a broker fee for BROKER’S services. The <b>Broker Fee is</b> <CurrencyFormat thousandSeparator={true} prefix={'$'} maxlength="10" style = {{width:"100px"}} className='fw-bold text-center input-default'/>. Client understands
+                CLIENT agrees to pay BROKER a broker fee for BROKER’S services. The <b>Broker Fee is</b> <CurrencyFormat thousandSeparator={true} prefix={'$'} maxlength="10" style = {{width:"100px"}} className='fw-bold text-center input-default'/> (Client Initials: <Input disabled width="60px"/>). Client understands
                 this fee and understands that the broker fee <b>IS / <span className='bf-radius'>IS NOT REFUNDABLE</span></b>, irrespective of whether the policy is cancelled or rejected by the Client or insurer. Client
                 authorizes Broker to maintain premium payments in interest-bearing trust accounts and to receive any interest income there from until paid to the insurance company.
                 Additional Services: Broker may charge the following fees for the following services in addition to the broker fee:

@@ -10,15 +10,15 @@ export default function SBFHomeInternals({name, date}) {
     }, []);
 
     return (
-        <div className='sheet font-9 text-justify'>
+        <div className='sheet font-9 text-justify lh-3'>
             
             <Logo />
 
-            <div className='d-flex justify-content-between mt-4 mb-2'>
+            <div className='d-flex justify-content-between my-3'>
                 <div className='d-flex col-8'>
                     <b>Nombre del Asegurado:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1 text-center" maxlength="40" value={name}/>
+                        <Input className="w-100 ms-1 text-center fw-bold" value={name}/>
                     </span>
                 </div>
                 <div>
@@ -27,9 +27,9 @@ export default function SBFHomeInternals({name, date}) {
                 </div>
             </div>
 
-            <p className='text-center fw-bold font-14 mb-0'>APENDICE A</p>
+            <p className='text-center fw-bold font-12 mb-0'>APENDICE A</p>
             
-            <p className='lh-1 mb-0'>
+            <p className='mb-0'>
                 <b>I. </b>No firme ningún documento a menos de que este llenado completamente en todas las líneas y espacios y usted haya leído el documento por completo y
                 cuidadosamente.
                 <br />
@@ -56,10 +56,14 @@ export default function SBFHomeInternals({name, date}) {
                 Seguros titulado “Automobile Insurance”. Si su bróker está aplicando cobertura residencial, su bróker deberá proveerle con una copia de un folleto del Departamento de
                 Seguro de Seguros de Residencia titulado “Residencial Insurance”. Al firmar esta divulgación, usted reconoce haber recibido el folleto adecuado.
             </p>
+            <br/>
+            <p className='m-0'>
+                Iniciales del Cliente: <Input disabled width="60px"/>
+            </p>
 
-            <p className='text-center fw-bold font-12 my-1'>DESIGNACION DE BROKER DE SEGURO Y ACUERDO PARA PAGAR CUOTA DE BROKER</p>
+            <p className='text-center fw-bold font-10 my-1'>DESIGNACION DE BROKER DE SEGURO Y ACUERDO PARA PAGAR CUOTA DE BROKER</p>
 
-            <p className='lh-1'>
+            <p>
                 Al dia de hoy, firmante mencionado abajo nombra a Adriana's Insurance Services Inc. Numero de licencia 0D36821 de el departamento de seguros de California.
                 Corredor de seguro (“Bróker”) como su bróker de seguro designado. Este acuerdo continuara en pleno vigor hasta que sea terminado por cualquiera de las dos partes.
                 El corredor está de acuerdo en representar al cliente de manera honesta y competente en obtener y dar servicio la cobertura de seguro deseado, según este disponible, y
@@ -67,17 +71,18 @@ export default function SBFHomeInternals({name, date}) {
                 permitir al corredor procurar una póliza de seguro. El cliente esta de acurdo en pagar una cuota de corredor por los servicios de corredor. La cuota de corredores
                 adicional a cualquier comisión, comisión contingente, o bonos, los cual puedan ser pagados al corredor por la compañía de seguros. Los servicios adicionales estan
                 detallados a continuación. El cliente autoriza al corredor cancelar su seguro si la prima o cuotas permanecen si ser pagados al corredor (Broker).
-            </p>
-
-            <p className='lh-1'>
-                El honorario del <b>Broker es</b> <CurrencyFormat thousandSeparator={true} prefix={'$'} maxlength="10" style = {{width:"100px"}} className='fw-bold text-center input-default'/>. El cliente está de acuerdo en pagar esta cuota y entiende que los honorarios <b>SON / <span className='bf-radius'>NO SON REEMBOLSABLES</span></b> independientemente de que la póliza sea cancelada o rechazada por el cliente o la aseguradora. El cliente
+                <br/>
+                <br/>
+                El honorario del <b>Broker es</b> <CurrencyFormat thousandSeparator={true} prefix={'$'} maxlength="10" style = {{width:"100px"}} className='fw-bold text-center input-default'/> (Iniciales del Cliente: <Input disabled width="60px"/>). El cliente está de acuerdo en pagar esta cuota y entiende que los honorarios <b>SON / <span className='bf-radius'>NO SON REEMBOLSABLES</span></b> independientemente de que la póliza sea cancelada o rechazada por el cliente o la aseguradora. El cliente
                 autoriza al corredor mantener los pagos de las primas en cuentas de fideicomiso y recibir cualquier ingreso por intereses del de las mismas, hasta que sea pagado a la
-                compañía de seguros. Servicios adicionales: el corredor puede cobrarlos siguientes tarifas por los siguientes servicios por encima de la cuota.
+                compañía de seguros. Servicios adicionales: el corredor puede cobrarlos siguientes tarifas por los siguientes servicios por encima de la cuota.            
             </p>
 
-            <table className='table table-fit'>
+            <table className='table table-fit text-center'>
                 <tbody>
-                    <tr className="text-decoration-underline fw-bold">
+                    <tr className="text-decoration-underline fw-bold tr-h">
+                        <td>Servicios:</td>
+                        <td>Honorarios:</td>
                         <td>Servicios:</td>
                         <td>Honorarios:</td>
                         <td>Servicios:</td>
@@ -85,43 +90,165 @@ export default function SBFHomeInternals({name, date}) {
                         <td>Servicios:</td>
                         <td>Honorarios:</td>
                     </tr>
-                    <tr>
-                        <td><b>Endorsements:</b></td>
-                        <td>Desde $300</td>
-                        <td><b>Renovaciones:</b></td>
-                        <td>Hasta 100% de los honorarios</td>
-                        <td><b>MVR:</b></td>
-                        <td>$10.00 per MVR</td>
+                    <tr className="tr-h">
+                        <td>
+                            <b>Endorsment:</b>
+                        </td>
+                        <td>
+                            Up to $300 
+                            <br/>
+                            per transaction
+                        </td>
+                        <td>
+                            <b>Monthly Payments:</b>
+                        </td>
+                        <td>
+                            $15.00
+                        </td>
+                        <td>
+                            <b>Reinstatement Fee/Late 
+                            <br/>
+                            Payment Fee:</b>
+                        </td>
+                        <td>
+                            Up to 
+                            <br/>
+                            $50.00
+                        </td>
+                        <td>
+                            <b>Registration 
+                            <br/>    
+                            Renewal Fee:</b>
+                        </td>
+                        <td>
+                            $48.00 
+                            <br/>
+                            per vehicle
+                        </td>
                     </tr>
-                    <tr>
-                        <td><b>Servicios Promocionales:</b></td>
-                        <td>$25.00</td>
-                        <td><b>Vehicle Registration:</b></td>
-                        <td>$10.00 per copy</td>
-                        <td><b>Pagos:</b></td>
-                        <td>$15.00</td>
+                    <tr className="tr-h">
+                        <td>
+                            <b>DocuSign:</b>
+                        </td>
+                        <td>
+                            $10.00 per 
+                            <br/>
+                            Transaction
+                        </td>
+                        <td>
+                            <b>Credit Card Service 
+                            <br/>
+                            Fee:</b>
+                        </td>
+                        <td>
+                            $1.00
+                        </td>
+                        <td>
+                            <b>DMV Transfer Title:</b>
+                        </td>
+                        <td>
+                            $148.00
+                        </td>
+                        <td>
+                            <b>DMV Removed 
+                            <br/>
+                            Suspension:</b>
+                        </td>
+                        <td>
+                            Service Fee 
+                            <br/>
+                            $15.71
+                        </td>
                     </tr>
-                    <tr>
-                        <td><b>Non-Sufficient Funds on Credit Card/Check:</b></td>
-                        <td>$35.00</td>
-                        <td><b>Renovacion de Placas:</b></td>
-                        <td>$25.00</td>
-                        <td><b>Pagos tarde:</b></td>
-                        <td>Up to $50.00</td>
+                    <tr className="tr-h">
+                        <td>
+                            <b>MVR:</b>
+                        </td>
+                        <td>
+                            $10.00 per driver
+                            <br/>
+                            by transaction
+                        </td>
+                        <td>
+                            <b>Agency Renewal:</b>
+                        </td>
+                        <td>
+                            Up to 100% of 
+                            <br/>
+                            Original BrokerFee
+                        </td>
+                        <td>
+                            <b>Non-Sufficient Funds on 
+                            <br/>    
+                            Credit Card/Check/Chargeback:</b>
+                        </td>
+                        <td>
+                            $35.00
+                        </td>
+                        <td>
+                            <b>Promo Registration 
+                            <br/>
+                            Renewal Fee:</b>
+                        </td>
+                        <td>
+                            $8.50 P.F.
+                            <br/>
+                            Reg. per vehicle
+                        </td>
+                    </tr>
+                    <tr className="tr-h">
+                        <td>
+                            <b>BF MK:</b>
+                        </td>
+                        <td>
+                            $10.00 per Transaction
+                            <br/>
+                            NB or Endo
+                        </td>
+                        <td>
+                            <b>Late Fee on 
+                            <br/>    
+                            Balance/Invoice:</b>
+                        </td>
+                        <td>
+                            Up to 
+                            <br/>
+                            $30.00
+                        </td>
+                        <td>
+                            <b>DMV
+                            <br/>
+                            Vehicle Verification:</b>
+                        </td>
+                        <td>
+                            Up to $10.00
+                            <br/>
+                            per Vehicle
+                        </td>
+                        <td>
+                            <b>Promo 
+                            <br/>
+                            Title Change:</b>
+                        </td>
+                        <td>
+                            $74.00 
+                            <br/>
+                            per vehicle
+                        </td>
                     </tr>
                 </tbody>
             </table>
 
-            <p className='lh-1 mb-1'>
+            <p className='mb-1'>
                 <b>PAGOS DE PRIMAS: </b> 
                 El corredor puede, en su única opción, aceptar pagos de la cuota de prima y transmitir el pago a la aseguradora por una cuota adicional de $15.00 por cada pago recibido. 
                 Los pagos deben ser recibidos por el corredor a no menos de dos (2) días hábiles previos a la fecha de vencimiento. El corredor no será responsable por pagos tardíos, cuotas de reinstalación, 
                 o la cancelación resultante de su póliza. La responsabilidad del corredor por aceptar el pago de primas será limitada a la cantidad del pago de la prima.
             </p>
 
-            <p className='text-center fw-bold font-12 my-1'>CANCELACION Y OTRAS DISPOSICIONES VARIAS</p>
+            <p className='text-center fw-bold font-10 my-1'>CANCELACION Y OTRAS DISPOSICIONES VARIAS</p>
             
-            <p className='lh-1'>
+            <p>
                 El corredor únicamente honrara solicitudes de cancelación hechas por escrito y firmadas por el cliente. El corredor puede proveer al cliente con tarjetas de identificación
                 de seguro al término del proceso de aplicación. El cliente reconoce y acepta que la cobertura no es prevista hasta que la aplicación sea suscrita y ceptada por la compañía
                 de seguro. En consecuencia, la tarjeta de identificación no puede ser utilizada como prueba de seguro por el cliente hasta que la compañía de seguro haya comprometido y
@@ -139,7 +266,7 @@ export default function SBFHomeInternals({name, date}) {
                 </div>
             </div>
             
-            <p className='text-center mt-3 fw-bold lh-1'>
+            <p className='text-center mt-3 fw-bold'>
                 Si usted tiene cualquier pregunta o queja por favor comuníquese al nuestro teléfono gratuito de servicio al cliente al 1-888-290-4040. En cualquier caso de preguntas/problemas referente a la
                 cuota de corredor o seguro, contacte al Departamento de Seguros al 1-800-927-HELP.
             </p>

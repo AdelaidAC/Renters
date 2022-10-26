@@ -40,7 +40,7 @@ export default function PAHomeInternals({name, date}) {
                 <div className='d-flex col-8'>
                     <b>Named Insured:</b>
                     <span className="flex-fill">
-                        <Input className="w-100 ms-1 text-center" maxlength="40" value={name}/>
+                        <Input className="w-100 ms-1 text-center fw-bold" maxlength="40" value={name}/>
                     </span>
                 </div>
                 <div>
