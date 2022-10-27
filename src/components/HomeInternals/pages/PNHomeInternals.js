@@ -162,11 +162,11 @@ export default function PNHomeInternals({name, address, phone}) {
                     <p className='fw-bold'>Cell Phone Number</p>
                 </div>
                 <div>
-                    <CurrencyFormat format="+1 (###) ###-####" mask="_" className='text-center input-default' style={{width: "150px"}}/>
+                    <CurrencyFormat format="(###) ###-####" mask="_" className='text-center input-default' style={{width: "150px"}}/>
                     <p className='fw-bold'>Home Phone Number</p>
                 </div>
                 <div>
-                    <CurrencyFormat format="+1 (###) ###-####" mask="_" className='text-center input-default' style={{width: "150px"}}/>
+                    <CurrencyFormat format="(###) ###-####" mask="_" className='text-center input-default' style={{width: "150px"}}/>
                     <p className='fw-bold'>Work Phone Number</p>
                 </div>
                 <div>

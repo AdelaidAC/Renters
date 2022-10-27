@@ -18,7 +18,7 @@ const agreementValues = [
     "Other"
 ]
 
-export default function PAHomeInternals({name, date}) {
+export default function PAHomeInternals({name, date, date2}) {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -26,7 +26,7 @@ export default function PAHomeInternals({name, date}) {
 
     {/*const [startDate, setStartDate] = useState('');*/}
 
-    var endDate = moment(date).add(7, 'days').format('MM/DD/YYYY');
+    let endDate = moment(date2).add(7, 'days').format('MM/DD/YYYY');
 
     return (
         
@@ -54,7 +54,7 @@ export default function PAHomeInternals({name, date}) {
             </p>*/}
 
             <p className='font-11 my-4'>
-                It is my stated intention to obtain insurance coverage effective <Input value = {date} width = "80px" className = "text-center fw-bold"/>, however I do not have copies of the following information with me:
+                It is my stated intention to obtain insurance coverage effective <Input value = {date2} width = "80px" className = "text-center fw-bold"/>, however I do not have copies of the following information with me:
             </p>
             
             

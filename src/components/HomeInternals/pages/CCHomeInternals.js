@@ -4,7 +4,7 @@ import CurrencyFormat from 'react-currency-format';
 import Input from '../../Input'
 import Logo from '../../Logo'
 
-export default function CCHomeInternals({name}) {
+export default function CCHomeInternals({name, address}) {
     
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -31,7 +31,7 @@ export default function CCHomeInternals({name}) {
       }
     });
 
-    const [address, setAddress] = useState('');
+    const [address2, setAddress2] = useState('');
     
     const [chkDC, setChkDC] = useState(false);
     const [chkDA, setChkDA] = useState(false);
@@ -62,7 +62,7 @@ export default function CCHomeInternals({name}) {
                         {/* <Title text="CREDIT CARD AUTHORIZATION FORM"/>*/}
                         
                         <hr style={{border: '2px solid black'}}/>
-                        FAX: <CurrencyFormat format="+1 (###) ###-####" className="text-center input-default" placeholder='N/A' style={{width: "25%"}}/> CUSTOMER CODE: <Input width = "25%" placeholder="N/A" className="text-center" maxlength="15"/>
+                        FAX: <CurrencyFormat format="(###) ###-####" className="text-center input-default" placeholder='N/A' style={{width: "25%"}}/> CUSTOMER CODE: <Input width = "25%" placeholder="N/A" className="text-center" maxlength="15"/>
                     </div>
                 </div>
                 
@@ -107,7 +107,12 @@ export default function CCHomeInternals({name}) {
                 </div>
                 <div className="row text-center pb-2">
                     <div className="col-12">
-                        <input style={{width:"80%"}} className="text-center input-default" maxlength="80" onChange={e => setAddress(e.target.value)}/>
+                        <input
+                            style={{width:"80%"}} 
+                            className="text-center input-default" 
+                            maxlength="80" 
+                            {...(chkDC ? {} : {value: address})}
+                            onChange={e => setAddress2(e.target.value)}/>
                     </div>
                 </div>
                 
@@ -122,10 +127,10 @@ export default function CCHomeInternals({name}) {
                 
                 <div className="row text-center">
                     <div className="col-6" style={{borderRight: '2px solid black'}}>
-                        <CurrencyFormat format="+1 (###) ###-#### Ext. #####" className="text-center input-default mb-2" placeholder='+1 (###) ###-#### Ext. #####' style={{width: "80%"}}/>
+                        <CurrencyFormat format="(###) ###-#### Ext. #####" className="text-center input-default mb-2" placeholder='(###) ###-#### Ext. #####' style={{width: "80%"}}/>
                     </div>
                     <div className="col-6">
-                        <CurrencyFormat format="+1 (###) ###-####" className="text-center input-default" placeholder='+1 (###) ###-####' style={{width: "80%"}}/>
+                        <CurrencyFormat format="(###) ###-####" className="text-center input-default" placeholder='(###) ###-####' style={{width: "80%"}}/>
                     </div>
                 </div>
                 
@@ -234,7 +239,7 @@ export default function CCHomeInternals({name}) {
                             width="90%" 
                             className="text-center" 
                             maxlength="80"
-                            {...(chkDA ? {value: address} : {})}
+                            {...(chkDA ? {value: address2} : {})}
                         />
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import Input from "../../Input";
 import Logo from "../../Logo";
 import Title from "../../Title";
 
-export default function DP3HO3Mobile({name, date}) {
+export default function DP3HO3Mobile({name, date, setDateHO}) {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -182,7 +182,7 @@ export default function DP3HO3Mobile({name, date}) {
             <p className="mx-0 mb-0 mt-3">
                 I <Input className="text-center fw-bold" width="400px" value={name}/>hereby appoint Adriana's Insurance Services Inc. as my Broker / Attorney in fact
                 to sign papers, applications, documents that are necessary in order to secure the insurance coverage specified below. I have
-                also been advised of the importance of the effective date of the policy and have chosen to have coverage start on: <input type="date" className='text-center' style={{width: "100px"}}/>
+                also been advised of the importance of the effective date of the policy and have chosen to have coverage start on: <input type="date" className='text-center' style={{width: "100px"}} onChange = {e => setDateHO(e.target.value)}/>
             </p>
 
             <table className="fw-bold my-3">

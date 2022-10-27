@@ -308,7 +308,7 @@ function App() {
         </div>
         <div>
           <label className="mx-1 fw-bold" for="phoneI">Cell:</label>
-          <CurrencyFormat format="+1 (###) ###-####" mask="_" className="text-center input-default" placeholder='+1 (###) ###-####' style={{width: "130px"}} id="phoneI" onChange={e => setPhoneI(e.target.value)}/>
+          <CurrencyFormat format="(###) ###-####" mask="_" className="text-center input-default" placeholder='(###) ###-####' style={{width: "130px"}} id="phoneI" onChange={e => setPhoneI(e.target.value)}/>
         </div>
         <div>
           <label className="mx-1 fw-bold" for="dateI">Date:</label>
