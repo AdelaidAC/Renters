@@ -22,7 +22,7 @@ export default function Home({pages, name, address, phone, date}) {
     renters = <><Badge text={count}/><RentersIS/></>;
 
     count++;
-    hO4 = <><Badge text={count}/><HO4 name={name} date={date} setDateHO={setDateHO}/></>;
+    hO4 = <><Badge text={count}/><HO4 name={name} date={date} setDateHO={setDateHO} date2={date2}/></>;
     
     count++;
     promiseA = <><Badge text={count}/><PAHomeInternals name={name} date={date} date2={date2}/></>;
