@@ -58,9 +58,7 @@ function App() {
     
     // Destructuring
     const { value, checked } = e.target;
-      
-    console.log(`${value} is ${checked}`);
-     
+           
     // Case 1 : The user checks the box
     if (checked) {
       setPageHInfo({
@@ -110,7 +108,7 @@ function App() {
         </div>
         <div>
           <label className="mx-1 fw-bold" for="dateI">Date:</label>
-          <input className="text-center" id="dateI" type="date" onChange={e => setDateI(e.target.value)}/> {console.log(dateInsured)}
+          <input className="text-center" id="dateI" type="date" onChange={e => setDateI(e.target.value)}/>
         </div>
       </div>
       <div className='text-center py-2 bg-nav2'>
