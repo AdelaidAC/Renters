@@ -16,7 +16,7 @@ export default function Home({pages, name, address, phone, date}) {
 
     const [dateHO, setDateHO] = useState('')
 
-    let date2 = moment(dateHO).format('MM-DD-YYYY');
+    let date2 = moment(dateHO).format('MM/DD/YYYY');
 
     count++;
     renters = <><Badge text={count}/><RentersIS/></>;
