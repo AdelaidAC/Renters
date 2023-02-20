@@ -9,7 +9,7 @@ import PNHomeInternals from "./pages/PNHomeInternals";
 import RentersIS from "./pages/RentersIS";
 import SBFHomeInternals from "./pages/SBFHomeInternals";
 
-export default function Home({pages, name, address, phone, date}) {
+export default function Home({pages, name, sn, city, state, zipcode/*address*/, phone, date}) {
 
     let brokerFee, balanceDue, creditCard, hO4, renters, promiseA;
     let count = 0;
@@ -37,12 +37,12 @@ export default function Home({pages, name, address, phone, date}) {
 
     if (Object.values(pages).includes("balanceDue")) {
         count++;
-        balanceDue = <><Badge text={count}/><PNHomeInternals name={name} address={address} phone={phone}/></>;
+        balanceDue = <><Badge text={count}/><PNHomeInternals name={name} sn={sn} city={city} state={state} zipcode={zipcode} /*address={address}*/ phone={phone}/></>;
     }
 
     if (Object.values(pages).includes("creditCard")) {
         count++;
-        creditCard = <><Badge text={count}/><CCHomeInternals name={name} address={address}/></>;
+        creditCard = <><Badge text={count}/><CCHomeInternals name={name} sn={sn} city={city} state={state} zipcode={zipcode} /*address={address}*//></>;
     }
 
     React.useEffect(() => {
