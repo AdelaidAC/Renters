@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Renters/static/css/main.a5cfd81d.css",
-    "main.js": "/Renters/static/js/main.5b47dc1f.js",
+    "main.js": "/Renters/static/js/main.4e9ce053.js",
     "static/media/adrianaslogo.jpg": "/Renters/static/media/adrianaslogo.987fbf771df7a56625f4.jpg",
     "index.html": "/Renters/index.html",
     "main.a5cfd81d.css.map": "/Renters/static/css/main.a5cfd81d.css.map",
-    "main.5b47dc1f.js.map": "/Renters/static/js/main.5b47dc1f.js.map"
+    "main.4e9ce053.js.map": "/Renters/static/js/main.4e9ce053.js.map"
   },
   "entrypoints": [
     "static/css/main.a5cfd81d.css",
-    "static/js/main.5b47dc1f.js"
+    "static/js/main.4e9ce053.js"
   ]
 }
